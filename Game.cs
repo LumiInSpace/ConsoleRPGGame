@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static ConsoleRPGGame.TypeText;
+﻿using static ConsoleRPGGame.TypeText;
 
 namespace ConsoleRPGGame
 {
@@ -24,7 +18,6 @@ namespace ConsoleRPGGame
             Console.WriteLine();
             typeText(player.ClassName);
             Console.WriteLine();
-
         }
 
         public Charakter GetCharakter()
