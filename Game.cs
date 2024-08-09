@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static ConsoleRPGGame.TypeText;
 
 namespace ConsoleRPGGame
 {
@@ -11,26 +12,42 @@ namespace ConsoleRPGGame
     {
         public void Start() 
         {
-            Console.WriteLine("Willkommen!");
-            Console.WriteLine("Bevor du beginnen kannst musst du erst deinen Charakter erstellen.");
+            typeText("Willkommen!\n");
+            typeText("Bevor du beginnen kannst musst du erst deinen Charakter erstellen.\n");
 
-            Charakter myCharakter = GetCharakter();
+            Charakter player = GetCharakter();
+            Console.WriteLine();
+
+            typeText(player.Name);
+            Console.WriteLine();
+            typeText(player.Age);
+            Console.WriteLine();
+            typeText(player.ClassName);
+            Console.WriteLine();
+
         }
 
         public Charakter GetCharakter()
         {
             bool nameIsNull = true;
-            string name = string.Empty;
+            string name = null;
+            string age = string.Empty;
 
             while (nameIsNull) {
 
-                Console.Write("Lege einen Namen fest: ");
+                typeText("Lege einen Namen fest: ");
                 name = Console.ReadLine() ;
-                if (name is not null) { nameIsNull = false ; }
+                
+                if (name != "")
+                { 
+                    nameIsNull = false ; 
+                }
             }
 
-            Console.WriteLine("Lege das Alter fest (optional): ");
-            string age = Console.ReadLine() ;
+            typeText("Lege das Alter fest (optional): ");
+            age = Console.ReadLine();
+
+            if (age is null) { age = "-"; }
 
             return new(name, age);
         }
