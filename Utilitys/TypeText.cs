@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleRPGGame
+namespace ConsoleRPGGame.Utilitys
 {
     public class TypeText
     {

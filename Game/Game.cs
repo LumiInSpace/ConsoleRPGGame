@@ -1,4 +1,4 @@
-﻿using static ConsoleRPGGame.TypeText;
+﻿using static ConsoleRPGGame.Utilitys.TypeText;
 
 namespace ConsoleRPGGame
 {
