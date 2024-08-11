@@ -7,7 +7,9 @@ namespace ConsoleRPGGame
         public void Start() 
         {
             typeText("Willkommen!\n");
+            Thread.Sleep(2000);
             typeText("Bevor du beginnen kannst musst du erst deinen Charakter erstellen.\n");
+            
 
             Charakter player = GetCharakter();
             Console.WriteLine();
@@ -28,6 +30,7 @@ namespace ConsoleRPGGame
 
             while (nameIsNull) {
 
+                Thread.Sleep(1000);
                 typeText("Lege einen Namen fest: ");
                 name = Console.ReadLine() ;
                 
@@ -37,10 +40,11 @@ namespace ConsoleRPGGame
                 }
             }
 
+            Thread.Sleep(1000);
             typeText("Lege das Alter fest (optional): ");
             age = Console.ReadLine();
 
-            if (age is null) { age = "-"; }
+            if (age == "") { age = "-"; }
 
             return new(name, age);
         }

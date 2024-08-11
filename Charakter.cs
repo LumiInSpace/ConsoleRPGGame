@@ -13,7 +13,7 @@ namespace ConsoleRPGGame
         public string? Age { get; set; }
         public Weapon CurrentWeapon { get; set; }
         public int HP { get; set; } = 100;
-        public int endurance { get; set; } = 100;
+        public int Endurance { get; set; } = 100;
         public string ClassName { get; set; }
 
         public Charakter(string name, string age)
