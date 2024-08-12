@@ -8,9 +8,9 @@ namespace ConsoleRPGGame.Weapons
 {
     public class WoodenSword : Weapon
     {
-        public double Range { get; set; }
+        public double Range { get; set; } = 1.5;
 
-        public WoodenSword() : base("Holzschwert", 17, 1.2)
+        public WoodenSword() : base("Holzschwert", 12, 1.2, 32)
         {
         }
     }

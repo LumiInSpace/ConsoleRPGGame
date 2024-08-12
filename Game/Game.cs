@@ -1,4 +1,7 @@
-﻿using static ConsoleRPGGame.Utilitys.TypeText;
+﻿using ConsoleRPGGame.Weapons;
+using static ConsoleRPGGame.Utilitys.TypeText;
+using static ConsoleRPGGame.Weapon;
+
 
 namespace ConsoleRPGGame
 {
@@ -20,6 +23,8 @@ namespace ConsoleRPGGame
             Console.WriteLine();
             typeText(player.ClassName);
             Console.WriteLine();
+
+            player.useLightAttack();
         }
 
         public Charakter GetCharakter()
