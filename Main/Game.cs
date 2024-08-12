@@ -1,21 +1,21 @@
-﻿namespace ConsoleRPGGame.Main
+﻿using ConsoleRPGGame.CharacterClasses;
+
+namespace ConsoleRPGGame.Main
 {
     public class Game
     {
         public void Start()
         {
             typeText("Willkommen :D\n");
-            Thread.Sleep(2000);
+            Thread.Sleep(1500);
             typeText("Bevor du beginnen kannst musst du erst deinen Charakter erstellen.\n");
 
-            Charakter player = GetCharakter();
+            Character player = GetCharakter();
             Console.WriteLine();
 
             typeText($"Name: {player.Name}");
             Console.WriteLine();
-            typeText($"Alter: {player.Age}");
-            Console.WriteLine();
-            typeText($"Klasse: {player.ClassName}");
+            typeText($"Klasse: {player.CharacterClass.Name}");
             Console.WriteLine();
             Console.ReadLine();
 
@@ -44,6 +44,8 @@
             }
 
             if (playerResponseShowInstructions == 1) { showInstructions(); }
+
+
         }
 
         public void startMainGame()
@@ -51,15 +53,13 @@
             
         }
 
-        public Charakter GetCharakter()
+        public Character GetCharakter()
         {
             bool nameIsNull = true;
             string name = null;
-            string age = string.Empty;
 
             while (nameIsNull)
             {
-
                 Thread.Sleep(1000);
                 typeText("Lege einen Namen fest: ");
                 name = Console.ReadLine();
@@ -70,13 +70,18 @@
                 }
             }
 
-            Thread.Sleep(1000);
-            typeText("Lege das Alter fest (optional): ");
-            age = Console.ReadLine();
+            CharacterClass characterClass = new Samurai();
 
-            if (age == "") { age = "-"; }
+            typeText("Wähle deine Startklasse: ");
 
-            return new(name, age);
+            typeText("[1] Samurai (Stärke: 15  Lebenspunkte: 120  Schadensresistenz: 17  Glück: 4) ");
+
+            switch(Console.ReadLine())
+            {
+                
+            }
+
+            return new(name, characterClass);
         }
 
         public static void showInstructions()

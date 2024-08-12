@@ -1,8 +1,8 @@
 ﻿namespace ConsoleRPGGame.Weapons
 {
-    public class Fist : Weapon
+    public class Fists : Weapon
     {
-        public Fist() : base("Fäuste", 2, 3, 14)
+        public Fists() : base("Fäuste", 2, 3, 14)
         { 
 
         }
