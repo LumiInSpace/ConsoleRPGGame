@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ConsoleRPGGame.Weapons
+﻿namespace ConsoleRPGGame.Weapons
 {
     public class Bow : Weapon
     {
         public double Range { get; set; }
 
-        public Bow() : base("Bogen", 17, 2.0)
+        public Bow() : base("Bogen", 17, 2.0, 64)
         {
         }
 

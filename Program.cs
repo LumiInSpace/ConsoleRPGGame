@@ -1,11 +1,14 @@
-﻿namespace ConsoleRPGGame
+﻿using ConsoleRPGGame.Main;
+
+namespace ConsoleRPGGame
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
             Game game = new Game();
             game.Start();
+            game.startMainGame();
         }
     }
 }
