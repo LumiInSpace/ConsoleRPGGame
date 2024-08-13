@@ -1,9 +1,11 @@
-﻿namespace ConsoleRPGGame.Weapons
+﻿using ConsoleRPGGame.src.Main;
+
+namespace ConsoleRPGGame.src.Weapons
 {
     public class Fists : Weapon
     {
         public Fists() : base("Fäuste", 2, 3, 14)
-        { 
+        {
 
         }
         public override void lightAttack()

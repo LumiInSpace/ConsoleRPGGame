@@ -1,11 +1,11 @@
-﻿using ConsoleRPGGame.CharacterClasses;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleRPGGame.Player
+namespace ConsoleRPGGame.src.Player
 {
     public class CharacterClass
     {
@@ -22,7 +22,7 @@ namespace ConsoleRPGGame.Player
         public string Name { get; set; }
 
         public CharacterClass(int strenght, int hp, int resistance, int luck, int endurance, string name)
-        { 
+        {
             Strenght = strenght;
             HP = hp;
             Resistance = resistance;

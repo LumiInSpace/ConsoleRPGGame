@@ -1,4 +1,4 @@
-﻿namespace ConsoleRPGGame.Main
+﻿namespace ConsoleRPGGame.src.Main
 {
     public class Weapon
     {

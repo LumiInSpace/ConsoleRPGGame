@@ -1,4 +1,6 @@
-﻿namespace ConsoleRPGGame.Weapons
+﻿using ConsoleRPGGame.src.Main;
+
+namespace ConsoleRPGGame.src.Weapons
 {
     public class WoodenSword : Weapon
     {

@@ -1,6 +1,7 @@
-﻿using ConsoleRPGGame.CharacterClasses;
+﻿
+using ConsoleRPGGame.src.Player;
 
-namespace ConsoleRPGGame.Main
+namespace ConsoleRPGGame.src.Main
 {
     public class Game
     {
@@ -50,13 +51,15 @@ namespace ConsoleRPGGame.Main
 
         public void startMainGame()
         {
-            
+
         }
 
         public Character GetCharakter()
         {
             bool nameIsNull = true;
             string name = null;
+            bool isCharacterClass = false;
+            int starterCharacterClass = 0;
 
             while (nameIsNull)
             {
@@ -70,15 +73,29 @@ namespace ConsoleRPGGame.Main
                 }
             }
 
-            CharacterClass characterClass = new Samurai();
+            while (isCharacterClass == false) {
 
-            typeText("Wähle deine Startklasse: ");
+                typeText("Wähle deine Startklasse: \n");
+                Console.WriteLine();
 
-            typeText("[1] Samurai (Stärke: 15  Lebenspunkte: 120  Schadensresistenz: 17  Glück: 4) ");
+                Console.WriteLine("[1] Samurai (Stärke: 15  Lebenspunkte: 12  Schadensresistenz: 17  Glück: 4) ");
+                Console.WriteLine("[2] Bandit  ()");
 
-            switch(Console.ReadLine())
+                isCharacterClass = int.TryParse(Console.ReadLine(), out starterCharacterClass);
+
+                if (isCharacterClass == false || starterCharacterClass < 1 || starterCharacterClass > 2) 
+                { 
+                    Console.WriteLine("Es ist ein Fehler aufgetreten. Versuche es erneut!"); 
+                }
+            }
+
+            CharacterClass characterClass = null;
+            
+            switch (starterCharacterClass)
             {
-                
+                case 1:
+                    characterClass = new Samurai();
+                    break;
             }
 
             return new(name, characterClass);

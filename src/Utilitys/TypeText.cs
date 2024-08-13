@@ -1,4 +1,4 @@
-﻿namespace ConsoleRPGGame.Utilitys
+﻿namespace ConsoleRPGGame.src.Utilitys
 {
     public class TypeText
     {

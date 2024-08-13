@@ -1,6 +1,6 @@
-﻿using ConsoleRPGGame.Main;
+﻿using ConsoleRPGGame.src.Main;
 
-namespace ConsoleRPGGame
+namespace ConsoleRPGGame.src
 {
     public class Program
     {
