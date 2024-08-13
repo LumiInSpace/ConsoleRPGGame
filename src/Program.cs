@@ -8,7 +8,7 @@ namespace ConsoleRPGGame.src
         {
             Game game = new Game();
             game.Start();
-            game.startMainGame();
+            game.StartMainGame();
         }
     }
 }

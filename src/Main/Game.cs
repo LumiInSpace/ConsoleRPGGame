@@ -44,12 +44,12 @@ namespace ConsoleRPGGame.src.Main
                 }
             }
 
-            if (playerResponseShowInstructions == 1) { showInstructions(); }
+            if (playerResponseShowInstructions == 1) { ShowInstructions(); }
 
 
         }
 
-        public void startMainGame()
+        public void StartMainGame()
         {
 
         }
@@ -79,7 +79,7 @@ namespace ConsoleRPGGame.src.Main
                 Console.WriteLine();
 
                 Console.WriteLine("[1] Samurai (Stärke: 15  Lebenspunkte: 12  Schadensresistenz: 17  Glück: 4) ");
-                Console.WriteLine("[2] Bandit  ()");
+                Console.WriteLine("[2] Bandit  (Stärke: 12)");
 
                 isCharacterClass = int.TryParse(Console.ReadLine(), out starterCharacterClass);
 
@@ -96,12 +96,18 @@ namespace ConsoleRPGGame.src.Main
                 case 1:
                     characterClass = new Samurai();
                     break;
+                case 2:
+                    characterClass = new Bandit();
+                    break;
+                default:
+                    characterClass = new Samurai();
+                    break;
             }
 
             return new(name, characterClass);
         }
 
-        public static void showInstructions()
+        public static void ShowInstructions()
         {
             Console.WriteLine("Zurzeit ist keine Anleitung vorhanden :3");
         }
