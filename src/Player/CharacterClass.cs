@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleRPGGame.src.Player
 {
-    public class CharacterClass
+    public abstract class CharacterClass
     {
         public int Strenght { get; set; }
 

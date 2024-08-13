@@ -3,7 +3,7 @@ namespace ConsoleRPGGame.src.Player
 {
     public class Character
     {
-        public CharacterClass CharacterClass { get; set; } = new Samurai();
+        public CharacterClass CharacterClass { get; set; }
 
         public string Name { get; set; } = string.Empty;
 
@@ -27,7 +27,7 @@ namespace ConsoleRPGGame.src.Player
         public Character(string name, CharacterClass characterClass)
         {
             Name = name;
-            CharacterClass = new Samurai();
+            CharacterClass = characterClass;
             EquippedWeapon = new Fists();
             Strenght = characterClass.Strenght;
             Resistance = characterClass.Resistance;
@@ -42,7 +42,7 @@ namespace ConsoleRPGGame.src.Player
         {
             if (EquippedWeapon != null)
             {
-                EquippedWeapon.lightAttack();
+                EquippedWeapon.LightAttack();
             }
             else
             {

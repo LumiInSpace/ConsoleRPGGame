@@ -78,8 +78,8 @@ namespace ConsoleRPGGame.src.Main
                 typeText("Wähle deine Startklasse: \n");
                 Console.WriteLine();
 
-                Console.WriteLine("[1] Samurai (Stärke: 15  Lebenspunkte: 12  Schadensresistenz: 17  Glück: 4) ");
-                Console.WriteLine("[2] Bandit  (Stärke: 12)");
+                Console.WriteLine("[1] Samurai (Stärke: 15  Lebenspunkte: 12  Schadensresistenz: 17  Glück: 4)");
+                Console.WriteLine("[2] Bandit  (Stärke: 12  Lebenspunkte: 11  Schadensresistenz: 12  Glück: 4)");
 
                 isCharacterClass = int.TryParse(Console.ReadLine(), out starterCharacterClass);
 

@@ -1,6 +1,6 @@
 ﻿namespace ConsoleRPGGame.src.Main
 {
-    public class Weapon
+    public abstract class Weapon
     {
         public string Name { get; set; } = string.Empty;
         public int Damage { get; set; }
@@ -15,17 +15,17 @@
             SpecialAttackDamage = specialAttackDamage;
         }
 
-        public virtual void lightAttack()
+        public virtual void LightAttack()
         {
             Console.WriteLine($"({Name}) Leichter Angriff! Schaden: {Damage}");
         }
 
-        public virtual void heavyAttack()
+        public virtual void HeavyAttack()
         {
             Console.WriteLine($"({Name}) Starker Angriff! Schaden: {Damage * Multiplier}");
         }
 
-        public virtual void specialAttack()
+        public virtual void SpecialAttack()
         {
             Console.WriteLine($"({Name}) !SPECIAL ATTACKE! Schaden: {SpecialAttackDamage}");
         }

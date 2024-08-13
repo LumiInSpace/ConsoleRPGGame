@@ -8,21 +8,21 @@ namespace ConsoleRPGGame.src.Weapons
         {
 
         }
-        public override void lightAttack()
+        public override void LightAttack()
         {
-            base.lightAttack();
+            base.LightAttack();
             Console.WriteLine($"({Name}) Leichter Faustschlag! Schaden: {Damage}");
         }
 
-        public override void heavyAttack()
+        public override void HeavyAttack()
         {
-            base.heavyAttack();
+            base.HeavyAttack();
             Console.WriteLine($"({Name})Starker Faustschlag! Schaden: {Damage * Multiplier}");
         }
 
-        public override void specialAttack()
+        public override void SpecialAttack()
         {
-            base.specialAttack();
+            base.SpecialAttack();
             Console.WriteLine($"({Name}) ANSTURM DER FÄUSTE! Schaden: {SpecialAttackDamage}");
         }
     }
