@@ -5,7 +5,6 @@ Aktuell befindet sich das Spiel in einem frühen Status der Entwicklung und ist 
 
 Spielbaren Versionen werden immer auf dem Main-Branch erscheinen!
 
-Bitte habt im Hinterkopf das ich kein Profiprogrammierer bin, aber ich lerne stets dazu!
 # XD
 
 Folgt mir auf GitHub :3
