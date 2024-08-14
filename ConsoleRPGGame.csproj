@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <Folder Include="src\Items\" />
+    <Folder Include="src\Events\" />
   </ItemGroup>
 
 </Project>
