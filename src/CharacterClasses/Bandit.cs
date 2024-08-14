@@ -4,7 +4,7 @@ namespace ConsoleRPGGame.src.CharacterClasses
 {
     public class Bandit : CharacterClass
     {
-        public Bandit() : base(14, 11, 12, 4, 140, "Bandit")
+        public Bandit() : base(11, 9, 12, 14, 4, "Bandit")
         {
 
         }

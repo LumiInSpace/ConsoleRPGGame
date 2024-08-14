@@ -4,7 +4,7 @@ namespace ConsoleRPGGame.src.CharacterClasses
 {
     public class Samurai : CharacterClass
     {
-        public Samurai() : base(15, 12, 17, 4, 115, "Samurai")
+        public Samurai() : base(13, 10, 15, 9, 3, "Samurai")
         {
 
         }

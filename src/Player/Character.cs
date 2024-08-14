@@ -22,6 +22,7 @@ namespace ConsoleRPGGame.src.Player
         public int HPPoints { get; set; }
 
         public int HP {  get; set; }
+        public int Endurance { get; set; }
 
 
         public Character(string name, CharacterClass characterClass)
@@ -36,6 +37,7 @@ namespace ConsoleRPGGame.src.Player
             CharacterPresetTyp = characterClass.Name;
             HPPoints = characterClass.HP;
             HP = characterClass.HP * 10;
+            Endurance = characterClass.Endurance * 10;
         }
 
         public void useLightAttack()
