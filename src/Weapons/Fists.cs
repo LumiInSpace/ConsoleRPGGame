@@ -1,5 +1,4 @@
-﻿using ConsoleRPGGame.src.Main;
-
+﻿
 namespace ConsoleRPGGame.src.Weapons
 {
     public class Fists : Weapon

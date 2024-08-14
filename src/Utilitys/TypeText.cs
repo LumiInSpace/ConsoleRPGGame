@@ -1,6 +1,6 @@
 ﻿namespace ConsoleRPGGame.src.Utilitys
 {
-    public class TypeText
+    public abstract class TypeText
     {
         public static void typeText(string text)
         {

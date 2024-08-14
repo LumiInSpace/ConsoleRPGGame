@@ -1,5 +1,5 @@
 ﻿
-using ConsoleRPGGame.src.Player;
+using ConsoleRPGGame.src.Events;
 
 namespace ConsoleRPGGame.src.Main
 {
@@ -46,18 +46,20 @@ namespace ConsoleRPGGame.src.Main
 
             if (playerResponseShowInstructions == 1) { ShowInstructions(); }
 
-
         }
 
         public void StartMainGame()
         {
+            CommonChestEvent chestEvent = new CommonChestEvent();
+            chestEvent.StartEvent();
 
+            Console.WindowWidth = Console.LargestWindowWidth;
         }
 
         public Character GetCharakter()
         {
             bool nameIsNull = true;
-            string name = null;
+            string name = string.Empty;
             bool isCharacterClass = false;
             int starterCharacterClass = 0;
 
