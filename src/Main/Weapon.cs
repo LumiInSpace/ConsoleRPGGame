@@ -1,20 +1,20 @@
 ﻿namespace ConsoleRPGGame.src.Main
 {
-    public abstract class Weapon
+    public class Weapon : Item, IDamageSource
     {
-        public string Name { get; set; } = string.Empty;
         public int Damage { get; set; }
         public double Multiplier { get; set; }
         public int SpecialAttackDamage { get; set; }
+        public bool HasSpecialAttack { get; set; }
 
-        public Weapon(string name, int damage, double multiplier, int specialAttackDamage)
+        public Weapon(int damage, double multiplier, int specialAttackDamage, bool hasSpecialAttack, string name, string description, string rarenessText, int rarenessNumber, int maxValue, string typ) : base(name, description, rarenessText, rarenessNumber, maxValue, typ) 
         {
-            Name = name;
             Damage = damage;
             Multiplier = multiplier;
             SpecialAttackDamage = specialAttackDamage;
+            HasSpecialAttack = hasSpecialAttack;
         }
-
+        
         public virtual void LightAttack()
         {
             Console.WriteLine($"({Name}) Leichter Angriff! Schaden: {Damage}");
@@ -22,12 +22,17 @@
 
         public virtual void HeavyAttack()
         {
-            Console.WriteLine($"({Name}) Starker Angriff! Schaden: {Damage * Multiplier}");
+            Console.WriteLine($"({Name})Starker Angriff! Schaden: {Damage * Multiplier}");
         }
 
         public virtual void SpecialAttack()
         {
-            Console.WriteLine($"({Name}) !SPECIAL ATTACKE! Schaden: {SpecialAttackDamage}");
+            if (HasSpecialAttack)
+            {
+                Console.WriteLine($"({Name}) SPEZIALATTACKE! Schaden: {SpecialAttackDamage}");
+            }
+
+            Console.WriteLine("Ausgerüstete Waffe hat keine Spezialattacke!");
         }
     }
 }

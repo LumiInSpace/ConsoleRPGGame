@@ -7,15 +7,17 @@
         public string Description { get; set; }
         public string RarenessText { get; set; }
         public int RarenessNumber { get; set; }
-        public int MaxNumber { get; set; }
+        public int MaxValue { get; set; }
+        public string Typ {  get; set; }
 
-        public Item(string name, string description, string rarenessText, int rarenessNumber, int maxNumber)
+        public Item(string name, string description, string rarenessText, int rarenessNumber, int maxNumber, string typ)
         {
             Name = name;
             Description = description;
             RarenessText = rarenessText;
             RarenessNumber = rarenessNumber;
-            MaxNumber = maxNumber;
+            MaxValue = maxNumber;
+            Typ = typ;
         }
     }
 }

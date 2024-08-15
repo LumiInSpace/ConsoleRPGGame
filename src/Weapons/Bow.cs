@@ -2,30 +2,31 @@
 
 namespace ConsoleRPGGame.src.Weapons
 {
-    public class Bow : Weapon
+    public class Bow : Weapon, IDamageSource
     {
-        public double Range { get; set; }
-
-        public Bow() : base("Bogen", 17, 2.0, 64)
+        public Bow() : base(17, 2.0, 45, true, "Holzbogen", "normaler, einfacher Bogen", "gewoehnlich", 1, 1, "Weapon")
         {
+            
         }
 
         public override void LightAttack()
         {
-            base.LightAttack();
-            Console.WriteLine($"({Name}) Bogenschuss! Schaden: {Damage}");
+            Console.WriteLine($"({Name}) Leichter Bogenschuss! Schaden: {Damage}");
         }
 
         public override void HeavyAttack()
         {
-            base.HeavyAttack();
-            Console.WriteLine($"({Name}) Starker Bogenschuss! Schaden: {Damage * Multiplier}");
+            Console.WriteLine($"({Name}) Starker Bogenschuss! Schaden: {Math.Round(Damage * Multiplier)}");
         }
 
         public override void SpecialAttack()
         {
-            base.SpecialAttack();
-            Console.WriteLine($"({Name}) PFEILHAGEL! Schaden: {SpecialAttackDamage}");
+            if (HasSpecialAttack)
+            {
+                Console.WriteLine($"({Name}) PFEILHAGEL! Schaden: {SpecialAttackDamage}");
+            }
+
+            Console.WriteLine("Ausgerüstete Waffe hat keine Spezialattacke!");
         }
     }
 }
