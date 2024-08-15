@@ -7,12 +7,12 @@
         public int SpecialAttackDamage { get; set; }
         public bool HasSpecialAttack { get; set; }
 
-        public Weapon(int damage, double multiplier, int specialAttackDamage, bool hasSpecialAttack, string name, string description, string rarenessText, int rarenessNumber, int maxValue, string typ) : base(name, description, rarenessText, rarenessNumber, maxValue, typ) 
+        public Weapon(WeaponConfiguration config) : base(config.Name, config.Description, config.RarenessText, config.RarenessNumber, config.MaxValue) 
         {
-            Damage = damage;
-            Multiplier = multiplier;
-            SpecialAttackDamage = specialAttackDamage;
-            HasSpecialAttack = hasSpecialAttack;
+            Damage = config.Damage;
+            Multiplier = config.Multiplier;
+            SpecialAttackDamage = config.SpecialAttackDamage;
+            HasSpecialAttack = config.HasSpecialAttack;
         }
         
         public virtual void LightAttack()

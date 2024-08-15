@@ -1,10 +1,13 @@
-﻿using ConsoleRPGGame.src.Main;
-
-namespace ConsoleRPGGame.src.Weapons
+﻿namespace ConsoleRPGGame.src.Weapons
 {
-    public class Bow : Weapon, IDamageSource
+    public class Bow : Weapon
     {
-        public Bow() : base(17, 2.0, 45, true, "Holzbogen", "normaler, einfacher Bogen", "gewoehnlich", 1, 1, "Weapon")
+        public Bow() : base(new WeaponConfiguration(17, 2.0, 54, true, "Dieter", "Krasser Ballermann", "Mythic+", 123, 1))
+        {
+            
+        }
+
+        public Bow(WeaponConfiguration config) : base(config)
         {
             
         }

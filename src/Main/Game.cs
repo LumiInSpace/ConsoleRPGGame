@@ -16,7 +16,7 @@ namespace ConsoleRPGGame.src.Main
 
             typeText($"Name: {player.Name}");
             Console.WriteLine();
-            typeText($"Klasse: {player.CharacterClass.Name}");
+            typeText($"Klasse: {player.CharacterClass}");
             Console.WriteLine();
             Console.ReadLine();
 
@@ -53,7 +53,6 @@ namespace ConsoleRPGGame.src.Main
             CommonChestEvent chestEvent = new CommonChestEvent();
             chestEvent.StartEvent();
 
-            Console.WindowWidth = Console.LargestWindowWidth;
         }
 
         public Character GetCharakter()
@@ -91,22 +90,13 @@ namespace ConsoleRPGGame.src.Main
                 }
             }
 
-            CharacterClass characterClass = null;
-            
-            switch (starterCharacterClass)
-            {
-                case 1:
-                    characterClass = new Samurai();
-                    break;
-                case 2:
-                    characterClass = new Bandit();
-                    break;
-                default:
-                    characterClass = new Samurai();
-                    break;
-            }
 
-            return new(name, characterClass);
+            return starterCharacterClass switch
+            {
+                1 => CharacterFactory.CreateCharacter(name, CharacterClass.Samurai),
+                2 => CharacterFactory.CreateCharacter(name, CharacterClass.Bandit),
+                _ => throw new IllegalCharacterClassException("Ausgewählte Charakterklasse nicht vorhanden!"),
+            };
         }
 
         public static void ShowInstructions()

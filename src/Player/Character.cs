@@ -17,27 +17,24 @@ namespace ConsoleRPGGame.src.Player
 
         public int Luck { get; set; }
 
-        public string CharacterPresetTyp { get; set; }
-
         public int HPPoints { get; set; }
 
         public int HP {  get; set; }
         public int Endurance { get; set; }
 
 
-        public Character(string name, CharacterClass characterClass)
+        public Character(CharacterConfiguration characterConfig)
         {
-            Name = name;
-            CharacterClass = characterClass;
+            Name = characterConfig.CharacterName;
+            CharacterClass = characterConfig.CharacterClass;
             EquippedWeapon = new Fists();
-            Strenght = characterClass.Strenght;
-            Resistance = characterClass.Resistance;
-            EndurancePoints = characterClass.Endurance;
-            Luck = characterClass.Luck;
-            CharacterPresetTyp = characterClass.Name;
-            HPPoints = characterClass.HP;
-            HP = characterClass.HP * 10;
-            Endurance = characterClass.Endurance * 10;
+            Strenght = characterConfig.Strenght;
+            Resistance = characterConfig.Resistance;
+            EndurancePoints = characterConfig.Endurance;
+            Luck = characterConfig.Luck;
+            HPPoints = characterConfig.HP;
+            HP = HPPoints * 10;
+            Endurance = EndurancePoints * 10;
         }
 
         public void useLightAttack()

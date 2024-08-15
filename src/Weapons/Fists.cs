@@ -3,7 +3,7 @@ namespace ConsoleRPGGame.src.Weapons
 {
     public class Fists : Weapon, IDamageSource
     {
-        public Fists() : base(2, 3, 14, true, "Fäuste", "Keine Beschreibung vorhanden", "gewoehnlich", 1, 1, "Weapon")
+        public Fists() : base(new WeaponConfiguration(2, 3, 14, true, "Fäuste", "Keine Beschreibung vorhanden", "gewoehnlich", 1, 1))
         {
 
         }
