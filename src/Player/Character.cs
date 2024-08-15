@@ -49,5 +49,28 @@ namespace ConsoleRPGGame.src.Player
             }
         }
 
+        public void useHeavyAttack()
+        {
+            if (EquippedWeapon != null)
+            {
+                EquippedWeapon.HeavyAttack();
+            }
+            else
+            {
+                Console.WriteLine("Keine Waffe ausgerüstet");
+            }
+        }
+
+        public void useSpecialAttack()
+        {
+            if (EquippedWeapon != null)
+            {
+                EquippedWeapon.SpecialAttack();
+            }
+            else
+            {
+                Console.WriteLine("Keine Waffe ausgerüstet");
+            }
+        }
     }
 }
