@@ -13,4 +13,6 @@
     <None Remove="src\Items\**" />
   </ItemGroup>
 
+  <ProjectExtensions><VisualStudio><UserProperties src_4gameitems_1json__JsonSchema="https://cdn.subsquid.io/schemas/squid_manifest.json" /></VisualStudio></ProjectExtensions>
+
 </Project>

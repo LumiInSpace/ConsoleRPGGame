@@ -6,6 +6,7 @@ namespace ConsoleRPGGame.src
     {
         static void Main(string[] args)
         {
+            LoadGameData.loadItems();
             Game game = new Game();
             game.Start();
             game.StartMainGame();
