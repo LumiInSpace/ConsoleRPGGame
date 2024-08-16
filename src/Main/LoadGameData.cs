@@ -12,6 +12,8 @@ namespace ConsoleRPGGame.src.Main
         public static void loadItems()
         {
             var items = new List<string>();
+
+
         }
     }              
 }
