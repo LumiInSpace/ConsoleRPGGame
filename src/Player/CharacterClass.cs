@@ -11,7 +11,8 @@ namespace ConsoleRPGGame.src.Player
     {
         Bandit,
         Samurai,
-        Warrior
+        Warrior,
+
 
         //public int Strenght { get; set; }
 

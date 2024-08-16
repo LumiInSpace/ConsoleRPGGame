@@ -1,5 +1,4 @@
-﻿
-namespace ConsoleRPGGame.src.Events
+﻿namespace ConsoleRPGGame.src.Events
 {
     public class CommonChestEvent : IEvent 
     {
@@ -7,13 +6,15 @@ namespace ConsoleRPGGame.src.Events
         {
             Random random = new Random();
             
-            typeText("Du hast eine gewöhnliche Truhe gefunden!");
+            TypeText("Du hast eine gewöhnliche Truhe gefunden!");
             Console.WriteLine("\n");
             Console.WriteLine("         __________\r\n        /\\____;;___\\\r\n       | /         /\r\n       `. ())oo() .\r\n        |\\(%()*^^()^\\\r\n       %| |-%-------|\r\n      % \\ | %  ))   |\r\n      %  \\|%________|"); //Truhe ASCII Art
             Console.WriteLine("\n");
-            typeText("Truhe öffnen?\n");
-            typeText("[1] Ja!\n");
-            typeText("[2] Nein!\n");
+            TypeText("Truhe öffnen?\n");
+            TypeText("[1] Ja!\n");
+            TypeText("[2] Nein!\n");
+            Console.WriteLine();
+            TypeText("[#]: ");
             string userInput = Console.ReadLine();
             bool isOk = CheckUserAnswer(userInput, 1, 2);
 
@@ -21,10 +22,10 @@ namespace ConsoleRPGGame.src.Events
             {
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Red;
-                typeText("Es ist ein Fehler aufgetreten versuche es erneut!\n");
+                TypeText("Es ist ein Fehler aufgetreten versuche es erneut!\n");
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine();
-                typeText("Press ENTER\n");
+                TypeText("Press ENTER\n");
                 Console.ReadLine();
                 StartEvent();
             }
@@ -35,7 +36,7 @@ namespace ConsoleRPGGame.src.Events
                 
                 if (userInputInt == 1) 
                 {
-                    typeText("Noch kein Inhalt!");
+                    TypeText("Noch kein Inhalt!");
                 }
             }
         }

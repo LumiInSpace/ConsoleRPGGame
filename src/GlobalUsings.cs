@@ -2,10 +2,11 @@
 global using ConsoleRPGGame.src.Player;
 global using ConsoleRPGGame.src.Utilitys;
 global using ConsoleRPGGame.src.Weapons;
-global using static ConsoleRPGGame.src.Utilitys.TypeText;
+global using static ConsoleRPGGame.src.Utilitys.TextWriter;
 global using static ConsoleRPGGame.src.Utilitys.AnswerChecker;
 global using ConsoleRPGGame.src.CharacterClasses;
 global using ConsoleRPGGame.src.Events;
+global using ConsoleRPGGame.src.Exceptions;
 
 
 //global using ConsoleRPGGame.Items;
