@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleRPGGame.src.Main
+namespace ConsoleRPGGame.src.Exceptions
 {
     public class IllegalCharacterClassException : Exception
     {

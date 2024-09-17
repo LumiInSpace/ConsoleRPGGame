@@ -1,8 +1,8 @@
 ﻿namespace ConsoleRPGGame.src.Utilitys
 {
-    public abstract class TypeText
+    public abstract class WriteText
     {
-        public static void typeText(string text)
+        public static void TypeText(string text)
         {
             foreach (char c in text)
             {

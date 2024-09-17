@@ -1,4 +1,4 @@
-﻿namespace ConsoleRPGGame.src.CharacterClasses.Exceptions
+﻿namespace ConsoleRPGGame.src.Exceptions
 {
     public class UnsupportedCharacterClassException : Exception
     {

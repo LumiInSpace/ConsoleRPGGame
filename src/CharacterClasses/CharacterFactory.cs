@@ -1,6 +1,4 @@
-﻿using ConsoleRPGGame.src.CharacterClasses.Exceptions;
-
-namespace ConsoleRPGGame.src.CharacterClasses
+﻿namespace ConsoleRPGGame.src.CharacterClasses
 {
     public static class CharacterFactory
     {
@@ -10,6 +8,8 @@ namespace ConsoleRPGGame.src.CharacterClasses
             {
                 CharacterClass.Bandit => CreateDefaultBandit(characterName),
                 CharacterClass.Samurai => CreateDefaultSamurai(characterName),
+                CharacterClass.Warrior => CreateDefaultWarrior(characterName),
+                CharacterClass.Beggar => CreateDefaultBeggar(characterName),
                 _ => throw new UnsupportedCharacterClassException("Die angegebene Spielerklasse wird nicht unterstützt")
             };
         }
@@ -20,7 +20,10 @@ namespace ConsoleRPGGame.src.CharacterClasses
         private static Character CreateDefaultSamurai(string characterName)
             => new Character(new CharacterConfiguration(CharacterClass.Samurai, characterName, 13, 10, 15, 9, 3));
 
-        //private static CharacterClass CreateDefaultBandit()
-        //    => new Warrior(11, 9, 12, 14, 4, "Bandit");
+        private static Character CreateDefaultWarrior(string characterName)
+            => new Character(new CharacterConfiguration(CharacterClass.Warrior, characterName, 14, 9, 14, 11, 2));
+
+        private static Character CreateDefaultBeggar(string characterName)
+            => new Character(new CharacterConfiguration(CharacterClass.Beggar, characterName, 7, 7, 8, 12, 6));
     }
 }

@@ -1,51 +1,52 @@
-﻿
-using ConsoleRPGGame.src.Events;
-
-namespace ConsoleRPGGame.src.Main
+﻿namespace ConsoleRPGGame.src.Main
 {
     public class Game
     {
         public void Start()
         {
-            typeText("Willkommen :D\n");
-            Thread.Sleep(1500);
-            typeText("Bevor du beginnen kannst musst du erst deinen Charakter erstellen.\n");
-
-            Character player = GetCharakter();
-            Console.WriteLine();
-
-            typeText($"Name: {player.Name}");
-            Console.WriteLine();
-            typeText($"Klasse: {player.CharacterClass}");
-            Console.WriteLine();
-            Console.ReadLine();
-
-            bool isValidInputShowInstructions = false;
-            int playerResponseShowInstructions = 0;
-
-            while (isValidInputShowInstructions == false)
+            try
             {
-                Console.Clear();
-                Console.WriteLine("Möchtest du direkt ins Spiel starten oder doch zuerst die Anleitung lesen?");
-                Console.WriteLine();
-                Console.WriteLine("[1] Anleitung anzeigen");
-                Console.WriteLine("[2] Spiel Starten");
+                TypeText("Willkommen :D\n");
+                Thread.Sleep(1500);
+                TypeText("Bevor du beginnen kannst musst du erst deinen Charakter erstellen.\n");
 
-                bool wasSuccessful = int.TryParse(Console.ReadLine(), out playerResponseShowInstructions);
-                if (wasSuccessful && playerResponseShowInstructions == 1 || playerResponseShowInstructions == 2)
-                {
-                    isValidInputShowInstructions = true;
-                }
-                else
+                Character player = GetCharakter();
+                Console.WriteLine();
+
+                TypeText($"Name: {player.Name}");
+                Console.WriteLine();
+                TypeText($"Klasse: {player.CharacterClass}");
+                Console.WriteLine();
+                Console.ReadLine();
+
+                
+
+                while (true)
                 {
                     Console.Clear();
-                    Console.WriteLine("Es ist ein Fehler aufgetreten. Bitte versuche es erneut!");
-                    Console.ReadLine();
+                    TypeText("Möchtest du direkt ins Spiel starten oder doch zuerst die Anleitung lesen?\n");
+                    Console.WriteLine();
+                    TypeText("[1] Anleitung anzeigen\n");
+                    TypeText("[2] Spiel Starten\n");
+                    Console.WriteLine("\n");
+                    TypeText("[#]: ");
+                    string playerResponseShowInstructions = Console.ReadLine();
+
+                    if (CheckUserAnswer(playerResponseShowInstructions, 1, 2) == false)
+                    {
+                        Console.Clear();
+                        throw new InvalidUserInputException("Fehlerhafte Eingabe!");
+                    }
+                    
+
+                    if (int.Parse(playerResponseShowInstructions) == 1) { ShowInstructions(); }
+                    else { break; }
                 }
             }
-
-            if (playerResponseShowInstructions == 1) { ShowInstructions(); }
-
+            catch (Exception ex) 
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         public void StartMainGame()
@@ -65,7 +66,7 @@ namespace ConsoleRPGGame.src.Main
             while (nameIsNull)
             {
                 Thread.Sleep(1000);
-                typeText("Lege einen Namen fest: ");
+                TypeText("Lege einen Namen fest: ");
                 name = Console.ReadLine();
 
                 if (name != "")
@@ -76,15 +77,18 @@ namespace ConsoleRPGGame.src.Main
 
             while (isCharacterClass == false) {
 
-                typeText("Wähle deine Startklasse: \n");
+                TypeText("Wähle deine Startklasse: \n");
                 Console.WriteLine();
 
-                Console.WriteLine("[1] Samurai (Stärke: 13  Lebenspunkte: 10  Schadensresistenz: 15  Ausdauer: 9  Glück: 3)");
+                Console.WriteLine("[1] Samurai (Stärke: 13  Lebenspunkte: 10 Schadensresistenz: 15  Ausdauer: 9  Glück: 3)");
                 Console.WriteLine("[2] Bandit  (Stärke: 11  Lebenspunkte: 9  Schadensresistenz: 12  Ausdauer: 14  Glück: 4)");
+                Console.WriteLine("[3] Krieger (Stärke: 14  Lebenspunkte: 9  Schadensresistenz: 14  Ausdauer: 11  Glück: 2)");
+                Console.WriteLine("[4] Bettler (Stärke: 7   Lebenspunkte: 7  Schadensresistenz: 8   Ausdauer: 12  Glück: 6)"); 
+
 
                 isCharacterClass = int.TryParse(Console.ReadLine(), out starterCharacterClass);
 
-                if (isCharacterClass == false || starterCharacterClass < 1 || starterCharacterClass > 2) 
+                if (isCharacterClass == false || starterCharacterClass < 1 || starterCharacterClass > 4) 
                 { 
                     Console.WriteLine("Es ist ein Fehler aufgetreten. Versuche es erneut!"); 
                 }
@@ -95,13 +99,17 @@ namespace ConsoleRPGGame.src.Main
             {
                 1 => CharacterFactory.CreateCharacter(name, CharacterClass.Samurai),
                 2 => CharacterFactory.CreateCharacter(name, CharacterClass.Bandit),
+                3 => CharacterFactory.CreateCharacter(name, CharacterClass.Warrior),
+                4 => CharacterFactory.CreateCharacter(name, CharacterClass.Beggar),
                 _ => throw new IllegalCharacterClassException("Ausgewählte Charakterklasse nicht vorhanden!"),
             };
         }
 
         public static void ShowInstructions()
         {
+            Console.Clear();
             Console.WriteLine("Zurzeit ist keine Anleitung vorhanden :3");
+            Console.ReadLine();
         }
     }
 }
