@@ -1,4 +1,7 @@
-﻿namespace ConsoleRPGGame.src.Main
+﻿
+using ConsoleRPGGame.src.Events;
+
+namespace ConsoleRPGGame.src.Main
 {
     public class Game
     {
@@ -13,24 +16,21 @@
                 Character player = GetCharakter();
                 Console.WriteLine();
 
-                TypeText($"Name: {player.Name}");
-                Console.WriteLine();
-                TypeText($"Klasse: {player.CharacterClass}");
-                Console.WriteLine();
-                Console.ReadLine();
+            typeText($"Name: {player.Name}");
+            Console.WriteLine();
+            typeText($"Klasse: {player.CharacterClass}");
+            Console.WriteLine();
+            Console.ReadLine();
 
                 
 
-                while (true)
-                {
-                    Console.Clear();
-                    TypeText("Möchtest du direkt ins Spiel starten oder doch zuerst die Anleitung lesen?\n");
-                    Console.WriteLine();
-                    TypeText("[1] Anleitung anzeigen\n");
-                    TypeText("[2] Spiel Starten\n");
-                    Console.WriteLine("\n");
-                    TypeText("[#]: ");
-                    string playerResponseShowInstructions = Console.ReadLine();
+            while (isValidInputShowInstructions == false)
+            {
+                Console.Clear();
+                Console.WriteLine("Möchtest du direkt ins Spiel starten oder doch zuerst die Anleitung lesen?");
+                Console.WriteLine();
+                Console.WriteLine("[1] Anleitung anzeigen");
+                Console.WriteLine("[2] Spiel Starten");
 
                     if (CheckUserAnswer(playerResponseShowInstructions, 1, 2) == false)
                     {
@@ -57,38 +57,38 @@
         }
 
         public Character GetCharakter()
-        {
-            bool nameIsNull = true;
-            string name = string.Empty;
-            bool isCharacterClass = false;
-            int starterCharacterClass = 0;
+        { 
+                bool nameIsNull = true;
+                string name = string.Empty;
+                bool isCharacterClass = false;
+                int starterCharacterClass = 0;
 
             while (nameIsNull)
             {
                 Thread.Sleep(1000);
-                TypeText("Lege einen Namen fest: ");
+                typeText("Lege einen Namen fest: ");
                 name = Console.ReadLine();
 
-                if (name != "")
-                {
-                    nameIsNull = false;
+                    if (name != "")
+                    {
+                        nameIsNull = false;
+                    }
                 }
-            }
 
-            while (isCharacterClass == false) {
+                while (isCharacterClass == false)
+                {
 
-                TypeText("Wähle deine Startklasse: \n");
+                typeText("Wähle deine Startklasse: \n");
                 Console.WriteLine();
 
-                Console.WriteLine("[1] Samurai (Stärke: 13  Lebenspunkte: 10 Schadensresistenz: 15  Ausdauer: 9  Glück: 3)");
+                Console.WriteLine("[1] Samurai (Stärke: 13  Lebenspunkte: 10  Schadensresistenz: 15  Ausdauer: 9  Glück: 3)");
                 Console.WriteLine("[2] Bandit  (Stärke: 11  Lebenspunkte: 9  Schadensresistenz: 12  Ausdauer: 14  Glück: 4)");
-                Console.WriteLine("[3] Krieger (Stärke: 14  Lebenspunkte: 9  Schadensresistenz: 14  Ausdauer: 11  Glück: 2)");
-                Console.WriteLine("[4] Bettler (Stärke: 7   Lebenspunkte: 7  Schadensresistenz: 8   Ausdauer: 12  Glück: 6)"); 
 
+                    Console.WriteLine("\n");
+                    TypeText("[#]: ");
+                    string userInputCharacterClass = Console.ReadLine();
 
-                isCharacterClass = int.TryParse(Console.ReadLine(), out starterCharacterClass);
-
-                if (isCharacterClass == false || starterCharacterClass < 1 || starterCharacterClass > 4) 
+                if (isCharacterClass == false || starterCharacterClass < 1 || starterCharacterClass > 2) 
                 { 
                     Console.WriteLine("Es ist ein Fehler aufgetreten. Versuche es erneut!"); 
                 }
@@ -99,8 +99,6 @@
             {
                 1 => CharacterFactory.CreateCharacter(name, CharacterClass.Samurai),
                 2 => CharacterFactory.CreateCharacter(name, CharacterClass.Bandit),
-                3 => CharacterFactory.CreateCharacter(name, CharacterClass.Warrior),
-                4 => CharacterFactory.CreateCharacter(name, CharacterClass.Beggar),
                 _ => throw new IllegalCharacterClassException("Ausgewählte Charakterklasse nicht vorhanden!"),
             };
         }

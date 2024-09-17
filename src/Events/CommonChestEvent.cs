@@ -1,5 +1,4 @@
-﻿
-namespace ConsoleRPGGame.src.Events
+﻿namespace ConsoleRPGGame.src.Events
 {
     public class CommonChestEvent : IEvent 
     {
@@ -14,6 +13,8 @@ namespace ConsoleRPGGame.src.Events
             TypeText("Truhe öffnen?\n");
             TypeText("[1] Ja!\n");
             TypeText("[2] Nein!\n");
+            Console.WriteLine();
+            TypeText("[#]: ");
             string userInput = Console.ReadLine();
             bool isOk = CheckUserAnswer(userInput, 1, 2);
 
