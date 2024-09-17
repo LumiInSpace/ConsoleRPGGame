@@ -9,12 +9,12 @@ namespace ConsoleRPGGame.src.Main
 {
     public static class LoadGameData
     {
-        public static void loadItems()
-        {
-            var items = new List<string>();
+        //public static async Task<List<Item>> loadItems()
+        //{
+        //    var items = new List<Item>();
 
-
-        }
+        //    await 
+        //}
     }              
 }
                                                                  

@@ -97,6 +97,7 @@ namespace ConsoleRPGGame.src.Main
                     }
                     else
                     {
+                        isCharacterClass = true;
                         starterCharacterClass = int.Parse(userInputCharacterClass);
                     }
                 }
