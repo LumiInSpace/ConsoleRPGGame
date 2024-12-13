@@ -1,11 +1,11 @@
 ﻿namespace ConsoleRPGGame.src.Events
 {
-    public class CommonChestEvent : IEvent 
+    public class CommonChestEvent : Event
     {
-        public void StartEvent()
+        public override void StartEvent()
         {
             Random random = new Random();
-            
+
             TypeText("Du hast eine gewöhnliche Truhe gefunden!");
             Console.WriteLine("\n");
             Console.WriteLine("         __________\r\n        /\\____;;___\\\r\n       | /         /\r\n       `. ())oo() .\r\n        |\\(%()*^^()^\\\r\n       %| |-%-------|\r\n      % \\ | %  ))   |\r\n      %  \\|%________|"); //Truhe ASCII Art
@@ -33,11 +33,13 @@
             if (isOk)
             {
                 int userInputInt = int.Parse(userInput);
-                
-                if (userInputInt == 1) 
+
+                if (userInputInt == 1)
                 {
                     TypeText("Noch kein Inhalt!");
+
                 }
+
             }
         }
     }

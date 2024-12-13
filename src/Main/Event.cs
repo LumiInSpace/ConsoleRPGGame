@@ -1,9 +1,17 @@
-﻿
-namespace ConsoleRPGGame.src.Main
+﻿namespace ConsoleRPGGame.src.Main
 {
-    public interface IEvent
+    public class Event : IEvent
     {
-        void StartEvent();
-        
+        public int Rarity { get; set; }
+
+        public Event()
+        {
+            Rarity = 0;
+        }
+
+        public virtual void StartEvent()
+        {
+            Console.WriteLine("Start Event");
+        }
     }
 }
