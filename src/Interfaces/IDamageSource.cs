@@ -1,5 +1,4 @@
-﻿
-namespace ConsoleRPGGame.src.Main
+﻿namespace ConsoleRPGGame.src.Interfaces
 {
     public interface IDamageSource
     {

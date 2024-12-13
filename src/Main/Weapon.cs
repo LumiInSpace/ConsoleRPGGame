@@ -1,4 +1,6 @@
-﻿namespace ConsoleRPGGame.src.Main
+﻿using ConsoleRPGGame.src.Interfaces;
+
+namespace ConsoleRPGGame.src.Main
 {
     public class Weapon : Item, IDamageSource
     {
