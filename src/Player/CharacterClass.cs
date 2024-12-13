@@ -4,6 +4,7 @@
     {
         Bandit,
         Samurai,
-        Warrior
+        Warrior,
+        Beggar
     }
 }

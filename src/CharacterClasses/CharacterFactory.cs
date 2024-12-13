@@ -10,7 +10,7 @@
                 CharacterClass.Samurai => CreateDefaultSamurai(characterName),
                 CharacterClass.Warrior => CreateDefaultWarrior(characterName),
                 CharacterClass.Beggar => CreateDefaultBeggar(characterName),
-                _ => throw new UnsupportedCharacterClassException("Die angegebene Spielerklasse wird nicht unterstützt")
+                _ => throw new UnsupportedCharacterClassException("Die angegebene Spielerklasse ist nicht verfügbar")
             };
         }
 
