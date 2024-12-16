@@ -34,15 +34,16 @@ namespace ConsoleRPGGame.src.Main
                     Console.WriteLine("\n");
                     TypeText("[#]: ");
                     string playerResponseShowInstructions = Console.ReadLine();
+                    var checkedInput = CheckUserInput(playerResponseShowInstructions, 1, 2);
 
-                    if (CheckUserAnswer(playerResponseShowInstructions, 1, 2) == false)
+                    if (checkedInput.IsValid == false)
                     {
                         Console.Clear();
                         throw new InvalidUserInputException("Fehlerhafte Eingabe!");
                     }
 
 
-                    if (int.Parse(playerResponseShowInstructions) == 1)
+                    if (checkedInput.Value == 1)
                     {
                         ShowInstructions();
                     }
@@ -58,6 +59,9 @@ namespace ConsoleRPGGame.src.Main
 
         public void StartMainGame()
         {
+            Console.Clear();
+            Gui.ShowGui();
+            
             while (true)
             {
                 var newEvent = EventTrigger.TriggerEvent();
@@ -66,7 +70,7 @@ namespace ConsoleRPGGame.src.Main
         }
 
         public Character GetCharakter()
-        { 
+        {
             bool nameIsNull = true;
             string name = string.Empty;
             bool isCharacterClass = false;
@@ -80,7 +84,7 @@ namespace ConsoleRPGGame.src.Main
 
                 if (name != "")
                 {
-                        nameIsNull = false;
+                    nameIsNull = false;
                 }
             }
 
@@ -92,6 +96,10 @@ namespace ConsoleRPGGame.src.Main
 
                 Console.WriteLine("[1] Samurai (Stärke: 13  Lebenspunkte: 10  Schadensresistenz: 15  Ausdauer: 9  Glück: 3)");
                 Console.WriteLine("[2] Bandit  (Stärke: 11  Lebenspunkte: 9  Schadensresistenz: 12  Ausdauer: 14  Glück: 4)");
+                Console.WriteLine("[3] Warrior  (Stärke: 14  Lebenspunkte: 9  Schadensresistenz: 14  Ausdauer: 11  Glück: 2)");
+                Console.WriteLine("[4] Beggar  (Stärke: 7  Lebenspunkte: 7  Schadensresistenz: 8  Ausdauer: 12  Glück: 6)");
+
+
 
                 Console.WriteLine("\n");
                 TypeText("[#]: ");
@@ -100,7 +108,7 @@ namespace ConsoleRPGGame.src.Main
                 try
                 {
                     starterCharacterClass = int.Parse(userInput);
-                    if (starterCharacterClass < 1 || starterCharacterClass > 2)
+                    if (starterCharacterClass < 1 || starterCharacterClass > 4)
                     {
                         throw new Exception();
                     }
@@ -118,6 +126,8 @@ namespace ConsoleRPGGame.src.Main
             {
                 1 => CharacterFactory.CreateCharacter(name, CharacterClass.Samurai),
                 2 => CharacterFactory.CreateCharacter(name, CharacterClass.Bandit),
+                3 => CharacterFactory.CreateCharacter(name, CharacterClass.Warrior),
+                4 => CharacterFactory.CreateCharacter(name, CharacterClass.Beggar),
                 _ => throw new IllegalCharacterClassException("Ausgewählte Charakterklasse nicht vorhanden!"),
             };
         }

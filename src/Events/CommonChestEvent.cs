@@ -4,7 +4,7 @@
     {
         public override void StartEvent()
         {
-            Random random = new Random();
+            
 
             TypeText("Du hast eine gewöhnliche Truhe gefunden!");
             Console.WriteLine("\n");
@@ -16,9 +16,9 @@
             Console.WriteLine();
             TypeText("[#]: ");
             string userInput = Console.ReadLine();
-            bool isOk = CheckUserAnswer(userInput, 1, 2);
+            CheckedInput checkedInput = CheckUserInput(userInput, 1, 2);
 
-            if (!isOk)
+            if (checkedInput.IsValid == false)
             {
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -30,17 +30,12 @@
                 StartEvent();
             }
 
-            if (isOk)
-            {
-                int userInputInt = int.Parse(userInput);
 
-                if (userInputInt == 1)
-                {
-                    TypeText("Noch kein Inhalt!");
+            ItemRandomizer randomizer = new(70, 20, 5, 3, 2, 0);
+            Rarity itemRarity = randomizer.GetItemRarity();
 
-                }
+            //GetItem(itemRarity)
 
-            }
         }
     }
 }

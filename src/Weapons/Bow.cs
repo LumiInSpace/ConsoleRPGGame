@@ -2,7 +2,7 @@
 {
     public class Bow : Weapon
     {
-        public Bow() : base(new WeaponConfiguration(17, 2.0, 54, true, "Dieter", "Krasser Ballermann", "Mythic+", 123, 1))
+        public Bow() : base(new WeaponConfiguration(17, 2.0, 54, true, "Holzbogen", "Ein Holzbogen aus Weide in einem Strick. Genug um damit einen Pfeil abzuschießen.", Rarity.Common, 1))
         {
             
         }

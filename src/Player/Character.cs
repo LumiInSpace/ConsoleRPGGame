@@ -17,10 +17,11 @@ namespace ConsoleRPGGame.src.Player
 
         public int Luck { get; set; }
 
-        public int HPPoints { get; set; }
-
         public int HP {  get; set; }
+
         public int Endurance { get; set; }
+
+        public int SkillPoints { get; set; } = 0;
 
 
         public Character(CharacterConfiguration characterConfig)
@@ -30,11 +31,9 @@ namespace ConsoleRPGGame.src.Player
             EquippedWeapon = new Fists();
             Strenght = characterConfig.Strenght;
             Resistance = characterConfig.Resistance;
-            EndurancePoints = characterConfig.Endurance;
             Luck = characterConfig.Luck;
-            HPPoints = characterConfig.HP;
-            HP = HPPoints * 10;
-            Endurance = EndurancePoints * 10;
+            HP = characterConfig.HP * 10;
+            Endurance = characterConfig.Endurance * 10;
         }
 
         public void useLightAttack()
