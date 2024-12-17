@@ -12,5 +12,6 @@ namespace ConsoleRPGGame.src.Main
         public string Description { get; set; } = description;
         public Rarity Rarity { get; set; } = rarity;
         public int MaxValue { get; set; } = maxValue;
+        public ItemCategory Category { get; set; }
     }
 }

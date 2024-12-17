@@ -1,15 +1,15 @@
-﻿using ConsoleRPGGame.src.Main;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 
 namespace ConsoleRPGGame.src
 {
-    public class Program
+    public static class Program
     {
         
 
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
-            //LoadGameData.loadItems();
+            List<Item> items = new List<Item>();
+            items = LoadGameData.LoadItems();
             Game game = new Game();
             game.Start();
             game.StartMainGame();

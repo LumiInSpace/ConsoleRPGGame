@@ -1,31 +1,32 @@
 ﻿
-namespace ConsoleRPGGame.src.Weapons
-{
-    public class Fists : Weapon
-    {
-        public Fists() : base(new WeaponConfiguration(2, 3, 14, true, "Fäuste", "Standart-Waffe", Rarity.Common, 1))
-        {
+//namespace ConsoleRPGGame.src.Weapons
+//{
+//    public class Fists : Weapon
+//    {
+//        public Fists() : base(new WeaponConfiguration(2, 3, 14, true, "Fäuste", "Standart-Waffe", Rarity.Common, 1))
+//        {
 
-        }
+//        }
 
-        public override void LightAttack()
-        {
-            Console.WriteLine($"({Name}) Leichter Faustschlag! Schaden: {Damage}");
-        }
+//        public override void LightAttack()
+//        {
+//            Console.WriteLine($"({Name}) Leichter Faustschlag! Schaden: {Damage}");
+//        }
 
-        public override void HeavyAttack()
-        {
-            Console.WriteLine($"({Name})Starker Faustschlag! Schaden: {Damage * Multiplier}");
-        }
+//        public override void HeavyAttack()
+//        {
+//            Console.WriteLine($"({Name})Starker Faustschlag! Schaden: {Damage * Multiplier}");
+//        }
 
-        public override void SpecialAttack()
-        {
-            if (HasSpecialAttack)
-            {
-                Console.WriteLine($"({Name}) ANSTURM DER FÄUSTE! Schaden: {SpecialAttackDamage}");
-            }
+//        public override void SpecialAttack()
+//        {
+//            if (HasSpecialAttack)
+//            {
+//                Console.WriteLine($"({Name}) ANSTURM DER FÄUSTE! Schaden: {SpecialAttackDamage}");
+//            }
+//            else { Console.WriteLine("Ausgerüstete Waffe hat keine Spezialattacke!"); }
 
-            Console.WriteLine("Ausgerüstete Waffe hat keine Spezialattacke!");
-        }
-    }
-}
+
+//        }
+//    }
+//}

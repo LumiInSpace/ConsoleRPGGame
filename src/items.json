@@ -1,0 +1,14 @@
+[
+  {
+    "Category": "Weapon",
+    "ID": 1,
+    "Name": "Steel Sword",
+    "Description": "A sturdy steel sword.",
+    "Rarity": "Rare",
+    "MaxValue": 1,
+    "Damage": 25,
+    "Multiplier": 1.5,
+    "SpecialAttackDamage": 40,
+    "HasSpecialAttack": true
+  }
+]

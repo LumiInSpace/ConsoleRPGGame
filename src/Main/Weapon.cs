@@ -1,4 +1,5 @@
 ﻿using ConsoleRPGGame.src.Interfaces;
+using System.Text.Json.Serialization;
 
 namespace ConsoleRPGGame.src.Main
 {
@@ -9,12 +10,14 @@ namespace ConsoleRPGGame.src.Main
         public int SpecialAttackDamage { get; set; }
         public bool HasSpecialAttack { get; set; }
 
-        public Weapon(WeaponConfiguration config) : base(config.Name, config.Description, config.Rarity, config.MaxValue) 
+        [JsonConstructor]
+        public Weapon(int id, string name, string description, Rarity rarity, int maxValue,
+                  ItemCategory category, int damage, double multiplier, int specialAttackDamage, bool hasSpecialAttack) : base(name, description, rarity, maxValue, category) 
         {
-            Damage = config.Damage;
-            Multiplier = config.Multiplier;
-            SpecialAttackDamage = config.SpecialAttackDamage;
-            HasSpecialAttack = config.HasSpecialAttack;
+            Damage = damage;
+            Multiplier = multiplier;
+            SpecialAttackDamage = specialAttackDamage;
+            HasSpecialAttack = hasSpecialAttack;
         }
         
         public virtual void LightAttack()

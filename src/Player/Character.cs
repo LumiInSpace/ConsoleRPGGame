@@ -28,7 +28,7 @@ namespace ConsoleRPGGame.src.Player
         {
             Name = characterConfig.CharacterName;
             CharacterClass = characterConfig.CharacterClass;
-            EquippedWeapon = new Fists();
+            EquippedWeapon = null;
             Strenght = characterConfig.Strenght;
             Resistance = characterConfig.Resistance;
             Luck = characterConfig.Luck;
