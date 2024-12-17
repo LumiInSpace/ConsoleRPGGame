@@ -7,7 +7,13 @@
             foreach (char c in text)
             {
                 Console.Write(c);
-                Thread.Sleep(30);
+
+                if(SpinWait.SpinUntil(() => Console.KeyAvailable && Console.ReadKey(true).Key == ConsoleKey.Enter, 30))
+                {
+                    Console.CursorLeft = 0;
+                    Console.WriteLine(text);
+                    break;
+                }
             }
         }
     }
