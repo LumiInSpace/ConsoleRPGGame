@@ -8,7 +8,7 @@ namespace ConsoleRPGGame.src.Main
     {
         public static List<Item> LoadItems()
         {
-            var json = File.ReadAllText("C:\\Dev\\ConsoleRPGGame\\items.json");
+            var json = File.ReadAllText("items.json");
 
             var items = ItemDeserializer.DeserializeItems(json);
 
