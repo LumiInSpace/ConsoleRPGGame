@@ -15,6 +15,7 @@ namespace ConsoleRPGGame.src.Main
             foreach (var item in items)
             {
                 Console.WriteLine($"Geladenes Item: {item.Name} ({item.GetType().Name})");
+                Console.Clear();
             }
 
             return items;

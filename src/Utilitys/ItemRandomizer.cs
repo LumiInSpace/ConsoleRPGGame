@@ -35,5 +35,29 @@
             else { return Rarity.Mythic; }
         }
 
+        public List<Item> GetLoot(Rarity rarity, List<Item> items)
+        {
+            List<Item> filteredItems = new List<Item>();
+
+            switch (rarity) {
+                
+                case Rarity.Common:
+                    filteredItems.AddRange(items.Where(x => x.Rarity == Rarity.Common));
+                    return GetCommonLoot(filteredItems);
+                default:
+                    return filteredItems;
+            } 
+        }
+
+        private List<Item> GetCommonLoot(List<Item> commonItems) 
+        { 
+            Random random = new Random();
+            List<Item> loot = new List<Item>();
+
+            loot.Add(commonItems[random.Next(commonItems.Count)]);
+
+            return loot;
+        }
+
     }
 }

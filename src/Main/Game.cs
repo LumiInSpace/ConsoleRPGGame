@@ -5,67 +5,59 @@ namespace ConsoleRPGGame.src.Main
 {
     public class Game
     {
-        public void Start()
+        public Character Start()
         {
-            try
+
+            TypeText("Willkommen :D\n");
+            Thread.Sleep(1500);
+            TypeText("Bevor du beginnen kannst musst du erst deinen Charakter erstellen.\n");
+
+            Character player = GetCharakter();
+            Console.WriteLine();
+
+            TypeText($"Name: {player.Name}");
+            Console.WriteLine();
+            TypeText($"Klasse: {player.CharacterClass}");
+            Console.WriteLine();
+            Console.ReadLine();
+
+            while (true)
             {
-                TypeText("Willkommen :D\n");
-                Thread.Sleep(1500);
-                TypeText("Bevor du beginnen kannst musst du erst deinen Charakter erstellen.\n");
-
-                Character player = GetCharakter();
+                Console.Clear();
+                Console.WriteLine("Möchtest du direkt ins Spiel starten oder doch zuerst die Anleitung lesen?");
                 Console.WriteLine();
+                Console.WriteLine("[1] Anleitung anzeigen");
+                Console.WriteLine("[2] Spiel Starten");
+                Console.WriteLine("\n");
+                TypeText("[#]: ");
+                string playerResponseShowInstructions = Console.ReadLine();
+                var checkedInput = CheckUserInput(playerResponseShowInstructions, 1, 2);
 
-                TypeText($"Name: {player.Name}");
-                Console.WriteLine();
-                TypeText($"Klasse: {player.CharacterClass}");
-                Console.WriteLine();
-                Console.ReadLine();
-
-
-
-                while (true)
+                if (checkedInput.IsValid == false)
                 {
                     Console.Clear();
-                    Console.WriteLine("Möchtest du direkt ins Spiel starten oder doch zuerst die Anleitung lesen?");
-                    Console.WriteLine();
-                    Console.WriteLine("[1] Anleitung anzeigen");
-                    Console.WriteLine("[2] Spiel Starten");
-                    Console.WriteLine("\n");
-                    TypeText("[#]: ");
-                    string playerResponseShowInstructions = Console.ReadLine();
-                    var checkedInput = CheckUserInput(playerResponseShowInstructions, 1, 2);
-
-                    if (checkedInput.IsValid == false)
-                    {
-                        Console.Clear();
-                        throw new InvalidUserInputException("Fehlerhafte Eingabe!");
-                    }
-
-
-                    if (checkedInput.Value == 1)
-                    {
-                        ShowInstructions();
-                    }
-                    else { break; }
-
                 }
+
+
+                if (checkedInput.Value == 1)
+                {
+                    ShowInstructions();
+                    return player;
+                }
+                else { return player; }
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+
         }
 
-        public void StartMainGame()
+        public void StartMainGame(List<Item> items, Character player)
         {
             Console.Clear();
             Gui.ShowGui();
-            
+
             while (true)
             {
                 var newEvent = EventTrigger.TriggerEvent();
-                newEvent.StartEvent();
+                newEvent.StartEvent(items, player);
             }
         }
 

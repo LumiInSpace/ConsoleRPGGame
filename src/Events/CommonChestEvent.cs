@@ -2,7 +2,7 @@
 {
     public class CommonChestEvent : Event
     {
-        public override void StartEvent()
+        public override void StartEvent(List<Item> items, Character player)
         {
             
 
@@ -27,14 +27,21 @@
                 Console.WriteLine();
                 TypeText("Press ENTER\n");
                 Console.ReadLine();
-                StartEvent();
+                StartEvent(items, player);
             }
 
 
             ItemRandomizer randomizer = new(70, 20, 5, 3, 2, 0);
             Rarity itemRarity = randomizer.GetItemRarity();
 
-            //GetItem(itemRarity)
+            List<Item> loot = randomizer.GetLoot(Main.Rarity.Common, items);
+            Console.WriteLine("Du hast folgende Items erhalten: ");
+
+            foreach (Item item in loot)
+            {
+                
+                Console.WriteLine(item.Name);
+            }
 
         }
     }

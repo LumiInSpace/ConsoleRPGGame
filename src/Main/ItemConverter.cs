@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -9,7 +10,7 @@ public static class ItemDeserializer
         PropertyNameCaseInsensitive = true,
         Converters =
         {
-            new JsonStringEnumConverter(JsonNamingPolicy.CamelCase) // Für Enum als String
+            new JsonStringEnumConverter(JsonNamingPolicy.CamelCase) //um Enum-Werte als String zu lesen
         }
     };
 
@@ -37,6 +38,15 @@ public static class ItemDeserializer
                 default:
                     throw new NotSupportedException($"Item-Typ '{itemCategory}' wird nicht unterstützt.");
             }
+
+            
+        }
+
+        foreach (var item in items)
+        {
+            Thread.Sleep(100);
+            Console.WriteLine($"Items wurden geladen: {item.Name}");
+            Console.Clear();
         }
 
         return items;

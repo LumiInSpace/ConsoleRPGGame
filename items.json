@@ -1,14 +1,38 @@
 [
-  {
-	"ID": 1,
-    "Name": "Steel Sword",
-    "Description": "A sturdy steel sword.",
-    "Rarity": "Rare",
-    "MaxValue": 1,
-	"Category": "Weapon",
-    "Damage": 25,
-    "Multiplier": 1.5,
-    "SpecialAttackDamage": 40,
-    "HasSpecialAttack": true
-  }
+	{
+		"ID": 2,
+		"Name": "Fists",
+		"Description": "Standart Waffe",
+		"Rarity": "Common",
+		"MaxValue": 0,
+		"Category": "Weapon",
+		"Damage": 5,
+		"Multiplier": 3,
+		"SpecialAttackDamage": 24,
+		"HasSpecialAttack": true
+	},
+	{
+		"ID": 2,
+		"Name": "Holz Schwert",
+		"Description": "Ein einfaches Schwert. Gefertigt aus Holz.",
+		"Rarity": "Common",
+		"MaxValue": 1,
+		"Category": "Weapon",
+		"Damage": 9,
+		"Multiplier": 2,
+		"SpecialAttackDamage": 0,
+		"HasSpecialAttack": false
+	},
+	{
+		"ID": 3,
+		"Name": "Holzbogen",
+		"Description": "Ein Holzbogen, aus Weide und einem Strick. Genug um damit Pfeile zu schießen",
+		"Rarity": "Common",
+		"MaxValue": 1,
+		"Category": "Weapon",
+		"Damage": 12,
+		"Multiplier": 1.5,
+		"SpecialAttackDamage": 0,
+		"HasSpecialAttack": false
+	}
 ]

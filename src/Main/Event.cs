@@ -9,7 +9,7 @@
             Rarity = 0;
         }
 
-        public virtual void StartEvent()
+        public virtual void StartEvent(List<Item> items, Character player)
         {
             Console.WriteLine("Start Event");
         }

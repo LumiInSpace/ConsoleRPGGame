@@ -2,7 +2,7 @@
 {
     public interface IEvent
     {
-        void StartEvent();
+        void StartEvent(List<Item> items, Character player);
 
     }
 }
