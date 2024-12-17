@@ -31,7 +31,6 @@ public static class ItemDeserializer
                 case ItemCategory.Weapon:
                     items.Add(element.Deserialize<Weapon>(options));
                     break;
-                // Beispiel für zukünftige Typen
                 //case ItemCategory.Potion:
                 //    items.Add(element.Deserialize<Potion>(options));
                 //    break;

@@ -4,7 +4,7 @@
     {
         public override void StartEvent(List<Item> items, Character player)
         {
-            
+
 
             TypeText("Du hast eine gewöhnliche Truhe gefunden!");
             Console.WriteLine("\n");
@@ -31,15 +31,23 @@
             }
 
 
-            ItemRandomizer randomizer = new(70, 20, 5, 3, 2, 0);
-            Rarity itemRarity = randomizer.GetItemRarity();
+            var commonChest = new Chest(new Dictionary<Rarity, float>
+            {
+                { Main.Rarity.Common, 70f },
+                { Main.Rarity.Uncommon, 20f },
+                { Main.Rarity.Rare, 8f },
+                { Main.Rarity.Epic, 2f },
+                { Main.Rarity.Legendary, 0.5f },
+                { Main.Rarity.Mythic, 0f }
+            });
 
-            List<Item> loot = randomizer.GetLoot(Main.Rarity.Common, items);
+            List<Item> loot = LootRandomizer.GetLoot(commonChest, items, 3);
+
             Console.WriteLine("Du hast folgende Items erhalten: ");
 
             foreach (Item item in loot)
             {
-                
+
                 Console.WriteLine(item.Name);
             }
 
