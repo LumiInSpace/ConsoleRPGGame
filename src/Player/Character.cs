@@ -78,9 +78,9 @@ namespace ConsoleRPGGame.src.Player
             return 0;
         }
 
-        public void AddItem(Item item)
+        public bool AddItem(Item item)
         {
-            Inventory.AddItem(item);
+            return Inventory.AddItem(item);
         }
 
         public bool RemoveItem(Item item)

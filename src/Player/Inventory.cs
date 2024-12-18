@@ -5,24 +5,20 @@ namespace ConsoleRPGGame.src.Player
     public class Inventory
     {
         public List<Item> PlayerInventory { get; set; } = new List<Item>();
+        public int InventorySlots { get; set; } = 20;
 
-        public int InventorySlots { get; set; }
-
-        public Inventory()
-        {
-
-        }
-
-        public void AddItem(Item item)
+        public bool AddItem(Item item)
         {
             if (PlayerInventory.Count >= InventorySlots)
             {
                 PlayerInventory.Add(item);
                 Console.WriteLine($"{item.Name} eingesammelt.");
+                return true;
             }
             else
             {
                 Console.WriteLine("Inventar voll. Item nicht eingesammelt!");
+                return false;
             }
         }
 
@@ -46,6 +42,11 @@ namespace ConsoleRPGGame.src.Player
             {
                 Console.WriteLine($"{item.Name} [{item.Rarity}] [{item.Category}]");
             }
+        }
+
+        public int GetFreeInventorySpace()
+        {
+            return InventorySlots - PlayerInventory.Count;
         }
 
     }

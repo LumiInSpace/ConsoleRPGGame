@@ -78,13 +78,21 @@ namespace ConsoleRPGGame.src.Utilitys.Gui
                 }
                 else if (selectedValue == loot.Count + 1)
                 {
+                    var isOk = true;
+                    
                     foreach (var item in loot)
                     {
-                        player.AddItem(item);
+                        isOk = player.AddItem(item);
+                        
+                        if(!isOk) { break; }
                     }
-                    Console.WriteLine("Alle Items wurden deinem Inventar hinzugefügt!");
-                    loot.Clear();
-                    Console.ReadLine();
+
+                    if (isOk)
+                    {
+                        Console.WriteLine("Alle Items wurden deinem Inventar hinzugefügt!");
+                        loot.Clear();
+                        Console.ReadLine();
+                    }
                 }
                 else if (selectedValue == loot.Count + 2)
                 {
@@ -92,11 +100,7 @@ namespace ConsoleRPGGame.src.Utilitys.Gui
                 }
             }
         }
-
-
-
-
-
+        
         public static ConsoleColor GetRarityColor(Rarity rarity)
         {
             switch (rarity)

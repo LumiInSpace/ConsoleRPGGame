@@ -115,7 +115,7 @@
 		"ID": 9,
 		"Name": "Mythic Item",
 		"Description": "",
-		"Rarity": "Legendary",
+		"Rarity": "Mythic",
 		"MaxValue": 1,
 		"Category": "Weapon",
 		"Damage": 26,
