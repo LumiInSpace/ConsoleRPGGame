@@ -1,5 +1,6 @@
 ﻿
 using ConsoleRPGGame.src.Events;
+using ConsoleRPGGame.src.Utilitys.Gui;
 
 namespace ConsoleRPGGame.src.Main
 {
@@ -52,7 +53,7 @@ namespace ConsoleRPGGame.src.Main
         public void StartMainGame(List<Item> items, Character player)
         {
             Console.Clear();
-            Gui.ShowGui();
+            Gui.ShowInfoBar();
 
             while (true)
             {

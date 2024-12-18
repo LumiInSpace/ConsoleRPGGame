@@ -7,13 +7,9 @@ namespace ConsoleRPGGame.src.Player
 
         public string Name { get; set; } = string.Empty;
 
-        public Weapon EquippedWeapon { get; set; }
-
         public int Strenght { get; set; }
 
         public int Resistance { get; set; }
-
-        public int EndurancePoints { get; set; }
 
         public int Luck { get; set; }
 
@@ -23,12 +19,15 @@ namespace ConsoleRPGGame.src.Player
 
         public int SkillPoints { get; set; } = 0;
 
+        public Inventory Inventory { get; private set; } = new Inventory();
+
+        public Equipment Equipment { get; set; } = new Equipment();
+
 
         public Character(CharacterConfiguration characterConfig)
         {
             Name = characterConfig.CharacterName;
             CharacterClass = characterConfig.CharacterClass;
-            EquippedWeapon = null;
             Strenght = characterConfig.Strenght;
             Resistance = characterConfig.Resistance;
             Luck = characterConfig.Luck;
@@ -36,40 +35,62 @@ namespace ConsoleRPGGame.src.Player
             Endurance = characterConfig.Endurance * 10;
         }
 
-        public void useLightAttack()
+        public int UseLightAttack()
         {
-            if (EquippedWeapon != null)
+            Item equipedItem = Equipment.GetEquippedWeapon();
+
+            if (equipedItem is Weapon equipedWeapon)
             {
-                EquippedWeapon.LightAttack();
+                return (int)Math.Round(equipedWeapon.Damage + (Strenght * 0.25));
             }
-            else
-            {
-                Console.WriteLine("Keine Waffe ausgerüstet");
-            }
+
+            Console.WriteLine("Es ist ein Fehler aufgetreten! Ausgerüstete Waffe ist keine Waffe.");
+            Console.WriteLine("Dieser Fehler sollte nicht auftreten können, falls doch dann melde diesen Fehler umgegehend.");
+            return 0;
         }
 
-        public void useHeavyAttack()
+        public int UseHeavyAttack()
         {
-            if (EquippedWeapon != null)
+            Item equipedItem = Equipment.GetEquippedWeapon();
+
+            if (equipedItem is Weapon equipedWeapon)
             {
-                EquippedWeapon.HeavyAttack();
+                return (int)Math.Round((equipedWeapon.Damage * equipedWeapon.Multiplier) + (Strenght * 0.25));
             }
-            else
-            {
-                Console.WriteLine("Keine Waffe ausgerüstet");
-            }
+
+            Console.WriteLine("Es ist ein Fehler aufgetreten! Ausgerüstete Waffe ist keine Waffe.");
+            Console.WriteLine("Dieser Fehler sollte nicht auftreten können, falls doch dann melde diesen Fehler umgegehend.");
+            return 0;
         }
 
-        public void useSpecialAttack()
+        public int UseSpecialAttack()
         {
-            if (EquippedWeapon != null)
+            Item equipedItem = Equipment.GetEquippedWeapon();
+
+            if (equipedItem is Weapon equipedWeapon)
             {
-                EquippedWeapon.SpecialAttack();
+                Console.WriteLine(equipedWeapon.SpecialAttackName);
+                return (int)Math.Round(equipedWeapon.SpecialAttackDamage * (Strenght * 0.25));
             }
-            else
-            {
-                Console.WriteLine("Keine Waffe ausgerüstet");
-            }
+
+            Console.WriteLine("Es ist ein Fehler aufgetreten! Ausgerüstete Waffe ist keine Waffe.");
+            Console.WriteLine("Dieser Fehler sollte nicht auftreten können, falls doch dann melde diesen Fehler umgegehend.");
+            return 0;
+        }
+
+        public void AddItem(Item item)
+        {
+            Inventory.AddItem(item);
+        }
+
+        public bool RemoveItem(Item item)
+        {
+            return Inventory.RemoveItem(item);
+        }
+
+        public void DisplayInventory()
+        {
+            Inventory.DisplayItems();
         }
     }
 }

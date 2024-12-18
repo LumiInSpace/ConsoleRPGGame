@@ -12,11 +12,6 @@ namespace ConsoleRPGGame.src.Main
         public ItemCategory Category { get; set; }
 
 
-        protected Item()
-        {
-            
-        }
-
         public Item(string name, string description, Rarity rarity, int maxNumber, ItemCategory category)
         {
             Name = name;

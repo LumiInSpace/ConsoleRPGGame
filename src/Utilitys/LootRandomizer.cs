@@ -18,7 +18,7 @@ namespace ConsoleRPGGame.src.Utilitys
 
                 Rarity chosenRarity = GetRandomRarity(chest.DropRates);
                 List<Item> filteredItems = new List<Item>();
-                filteredItems.AddRange(allItems.Where(x => x.Rarity == Rarity.Common));
+                filteredItems.AddRange(allItems.Where(x => x.Rarity == chosenRarity));
 
                 int randomIndex = random.Next(0, filteredItems.Count);
 

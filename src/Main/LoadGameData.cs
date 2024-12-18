@@ -12,12 +12,16 @@ namespace ConsoleRPGGame.src.Main
 
             var items = ItemDeserializer.DeserializeItems(json);
 
+            Console.WriteLine("Geladenes Item: ");
+            var pos = Console.CursorLeft;
+
             foreach (var item in items)
             {
-                Console.WriteLine($"Geladenes Item: {item.Name} ({item.GetType().Name})");
-                Console.Clear();
+                Console.WriteLine($"{item.Name} ({item.GetType().Name})");
+                Console.CursorLeft = pos;
             }
 
+            Console.Clear();
             return items;
         }
 

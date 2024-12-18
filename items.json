@@ -1,15 +1,17 @@
 [
 	{
-		"ID": 2,
+		"ID": 1,
 		"Name": "Fists",
-		"Description": "Standart Waffe",
-		"Rarity": "Common",
+		"Description": "Standard Waffe",
+		"Rarity": "None",
 		"MaxValue": 0,
 		"Category": "Weapon",
 		"Damage": 5,
-		"Multiplier": 3,
-		"SpecialAttackDamage": 24,
-		"HasSpecialAttack": true
+		"Multiplier": 5,
+		"SpecialAttackDamage": 25,
+		"HasSpecialAttack": true,
+		"SpecialAttackName": "Ansturm der Fäuste",
+		"SpecialAttackDescription": "Der Spieler greift den Gegner mit 5 schnellen Schlägen an. So schnell das man diesen Angriff nicht blockieren kann."
 	},
 	{
 		"ID": 2,
@@ -21,18 +23,106 @@
 		"Damage": 9,
 		"Multiplier": 2,
 		"SpecialAttackDamage": 0,
-		"HasSpecialAttack": false
+		"HasSpecialAttack": false,
+		"SpecialAttackName": "",
+		"SpecialAttackDescription": ""
 	},
 	{
 		"ID": 3,
 		"Name": "Holzbogen",
-		"Description": "Ein Holzbogen, aus Weide und einem Strick. Genug um damit Pfeile zu schießen",
+		"Description": "Ein Holzbogen, aus Weide und einem Strick. Genug um damit Pfeile zu schießen.",
 		"Rarity": "Common",
 		"MaxValue": 1,
 		"Category": "Weapon",
 		"Damage": 12,
 		"Multiplier": 1.5,
 		"SpecialAttackDamage": 0,
-		"HasSpecialAttack": false
+		"HasSpecialAttack": false,
+		"SpecialAttackName": "",
+		"SpecialAttackDescription": ""
+	},
+	{
+		"ID": 4,
+		"Name": "Einfacher Dolch",
+		"Description": "Ein normaler Dolch. Nicht besonderes.",
+		"Rarity": "Common",
+		"MaxValue": 1,
+		"Category": "Weapon",
+		"Damage": 16,
+		"Multiplier": 1.2,
+		"SpecialAttackDamage": 0,
+		"HasSpecialAttack": false,
+		"SpecialAttackName": "",
+		"SpecialAttackDescription": ""
+	},
+	{
+		"ID": 5,
+		"Name": "Eisen Schwert",
+		"Description": "Ein Eisenschwert, geschmiedet aus reinem Eisen aus der ... Miene.",
+		"Rarity": "Uncommon",
+		"MaxValue": 1,
+		"Category": "Weapon",
+		"Damage": 18,
+		"Multiplier": 1.4,
+		"SpecialAttackDamage": 35,
+		"HasSpecialAttack": true,
+		"SpecialAttackName": "Stichangriff",
+		"SpecialAttackDescription": "Der Spieler richtet die Waffe frontal auf den Gegner und sticht fügt ihm mächtigen Schaden zu."
+	},
+	{
+		"ID": 6,
+		"Name": "Großschwert",
+		"Description": "Ein normales Großschwert was mit beiden Händen gehalten werden muss.",
+		"Rarity": "Rare",
+		"MaxValue": 1,
+		"Category": "Weapon",
+		"Damage": 26,
+		"Multiplier": 1.5,
+		"SpecialAttackDamage": 0,
+		"HasSpecialAttack": false,
+		"SpecialAttackName": "",
+		"SpecialAttackDescription": ""
+	},
+	{
+		"ID": 7,
+		"Name": "Epic Item",
+		"Description": "",
+		"Rarity": "Epic",
+		"MaxValue": 1,
+		"Category": "Weapon",
+		"Damage": 26,
+		"Multiplier": 1.5,
+		"SpecialAttackDamage": 0,
+		"HasSpecialAttack": false,
+		"SpecialAttackName": "",
+		"SpecialAttackDescription": ""
+	},
+	{
+		"ID": 8,
+		"Name": "Legendary Item",
+		"Description": "",
+		"Rarity": "Legendary",
+		"MaxValue": 1,
+		"Category": "Weapon",
+		"Damage": 26,
+		"Multiplier": 1.5,
+		"SpecialAttackDamage": 0,
+		"HasSpecialAttack": false,
+		"SpecialAttackName": "",
+		"SpecialAttackDescription": ""
+	},
+	{
+		"ID": 9,
+		"Name": "Mythic Item",
+		"Description": "",
+		"Rarity": "Legendary",
+		"MaxValue": 1,
+		"Category": "Weapon",
+		"Damage": 26,
+		"Multiplier": 1.5,
+		"SpecialAttackDamage": 0,
+		"HasSpecialAttack": false,
+		"SpecialAttackName": "",
+		"SpecialAttackDescription": ""
 	}
 ]

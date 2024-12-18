@@ -12,5 +12,6 @@ namespace ConsoleRPGGame.src.Main
         Weapon,
         Potion,
         Food,
+        Shield
     }
 }

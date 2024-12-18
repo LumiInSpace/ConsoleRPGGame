@@ -9,15 +9,20 @@ namespace ConsoleRPGGame.src.Main
         public double Multiplier { get; set; }
         public int SpecialAttackDamage { get; set; }
         public bool HasSpecialAttack { get; set; }
+        public string SpecialAttackName { get; set; }
+        public string SpecialAttackDescription { get; set; }
 
         [JsonConstructor]
         public Weapon(int id, string name, string description, Rarity rarity, int maxValue,
-                  ItemCategory category, int damage, double multiplier, int specialAttackDamage, bool hasSpecialAttack) : base(name, description, rarity, maxValue, category) 
+                  ItemCategory category, int damage, double multiplier, int specialAttackDamage, bool hasSpecialAttack, string specialAttackName,
+                  string specialAttackDescription) : base(name, description, rarity, maxValue, category) 
         {
             Damage = damage;
             Multiplier = multiplier;
             SpecialAttackDamage = specialAttackDamage;
             HasSpecialAttack = hasSpecialAttack;
+            SpecialAttackName = specialAttackName;
+            SpecialAttackDescription = specialAttackDescription;
         }
         
         public virtual void LightAttack()
@@ -36,8 +41,11 @@ namespace ConsoleRPGGame.src.Main
             {
                 Console.WriteLine($"({Name}) SPEZIALATTACKE! Schaden: {SpecialAttackDamage}");
             }
+            else
+            { 
+                Console.WriteLine("Ausgerüstete Waffe hat keine Spezialattacke!");
+            }
 
-            Console.WriteLine("Ausgerüstete Waffe hat keine Spezialattacke!");
         }
     }
 }

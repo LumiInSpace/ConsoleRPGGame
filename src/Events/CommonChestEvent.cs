@@ -1,4 +1,6 @@
-﻿namespace ConsoleRPGGame.src.Events
+﻿using ConsoleRPGGame.src.Utilitys.Gui;
+
+namespace ConsoleRPGGame.src.Events
 {
     public class CommonChestEvent : Event
     {
@@ -43,13 +45,8 @@
 
             List<Item> loot = LootRandomizer.GetLoot(commonChest, items, 3);
 
-            Console.WriteLine("Du hast folgende Items erhalten: ");
+            Gui.ShowTakeLootScreen(loot, player);
 
-            foreach (Item item in loot)
-            {
-
-                Console.WriteLine(item.Name);
-            }
 
         }
     }
