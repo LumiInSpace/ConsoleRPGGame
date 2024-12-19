@@ -1,4 +1,5 @@
-﻿using ConsoleRPGGame.src.Utilitys.Gui;
+﻿using ConsoleRPGGame.src.Main.Chests;
+using ConsoleRPGGame.src.Utilitys.Gui;
 
 namespace ConsoleRPGGame.src.Events
 {
@@ -41,7 +42,7 @@ namespace ConsoleRPGGame.src.Events
                 { Main.Rarity.Epic, 2f },
                 { Main.Rarity.Legendary, 0.5f },
                 { Main.Rarity.Mythic, 0f }
-            });
+            }, Main.Rarity.Rare);
 
             List<Item> loot = LootRandomizer.GetLoot(commonChest, items, 3);
 

@@ -1,20 +1,6 @@
 [
 	{
 		"ID": 1,
-		"Name": "Fists",
-		"Description": "Standard Waffe",
-		"Rarity": "None",
-		"MaxValue": 0,
-		"Category": "Weapon",
-		"Damage": 5,
-		"Multiplier": 5,
-		"SpecialAttackDamage": 25,
-		"HasSpecialAttack": true,
-		"SpecialAttackName": "Ansturm der Fäuste",
-		"SpecialAttackDescription": "Der Spieler greift den Gegner mit 5 schnellen Schlägen an. So schnell das man diesen Angriff nicht blockieren kann."
-	},
-	{
-		"ID": 2,
 		"Name": "Holz Schwert",
 		"Description": "Ein einfaches Schwert. Gefertigt aus Holz.",
 		"Rarity": "Common",
@@ -28,7 +14,7 @@
 		"SpecialAttackDescription": ""
 	},
 	{
-		"ID": 3,
+		"ID": 2,
 		"Name": "Holzbogen",
 		"Description": "Ein Holzbogen, aus Weide und einem Strick. Genug um damit Pfeile zu schießen.",
 		"Rarity": "Common",
@@ -42,7 +28,7 @@
 		"SpecialAttackDescription": ""
 	},
 	{
-		"ID": 4,
+		"ID": 3,
 		"Name": "Einfacher Dolch",
 		"Description": "Ein normaler Dolch. Nicht besonderes.",
 		"Rarity": "Common",
@@ -56,7 +42,7 @@
 		"SpecialAttackDescription": ""
 	},
 	{
-		"ID": 5,
+		"ID": 4,
 		"Name": "Eisen Schwert",
 		"Description": "Ein Eisenschwert, geschmiedet aus reinem Eisen aus der ... Miene.",
 		"Rarity": "Uncommon",
@@ -70,7 +56,7 @@
 		"SpecialAttackDescription": "Der Spieler richtet die Waffe frontal auf den Gegner und sticht fügt ihm mächtigen Schaden zu."
 	},
 	{
-		"ID": 6,
+		"ID": 5,
 		"Name": "Großschwert",
 		"Description": "Ein normales Großschwert was mit beiden Händen gehalten werden muss.",
 		"Rarity": "Rare",
@@ -84,7 +70,7 @@
 		"SpecialAttackDescription": ""
 	},
 	{
-		"ID": 7,
+		"ID": 6,
 		"Name": "Epic Item",
 		"Description": "",
 		"Rarity": "Epic",
@@ -98,7 +84,7 @@
 		"SpecialAttackDescription": ""
 	},
 	{
-		"ID": 8,
+		"ID": 7,
 		"Name": "Legendary Item",
 		"Description": "",
 		"Rarity": "Legendary",
@@ -112,7 +98,7 @@
 		"SpecialAttackDescription": ""
 	},
 	{
-		"ID": 9,
+		"ID": 8,
 		"Name": "Mythic Item",
 		"Description": "",
 		"Rarity": "Mythic",

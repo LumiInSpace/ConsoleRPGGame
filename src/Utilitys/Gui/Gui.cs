@@ -6,9 +6,9 @@ namespace ConsoleRPGGame.src.Utilitys.Gui
     {
         public static void ShowInfoBar()
         {
-            Console.WriteLine(@" ________________________________________________________");
-            Console.WriteLine(@"|  Health: 100/100    Coins: 100     Inventar: 5/63      |");
-            Console.WriteLine(@" \______________________________________________________/");
+            Console.WriteLine(@"  ________________________________________________________");
+            Console.WriteLine(@$"|  Health: 100/100    Coins: 100     Inventar: 5/20      |");
+            Console.WriteLine(@"  \______________________________________________________/");
         }
 
         public static void ShowTakeLootScreen(List<Item> loot, Character player)
@@ -18,7 +18,7 @@ namespace ConsoleRPGGame.src.Utilitys.Gui
                 Console.Clear();
                 Console.WriteLine("Du hast folgende Items erhalten:\n");
 
-                
+
                 for (int i = 0; i < loot.Count; i++)
                 {
                     Console.ForegroundColor = GetRarityColor(loot[i].Rarity);
@@ -31,7 +31,7 @@ namespace ConsoleRPGGame.src.Utilitys.Gui
 
                 int selectedValue = 0;
 
-                
+
                 while (true)
                 {
                     Console.Write("[#]: ");
@@ -78,20 +78,22 @@ namespace ConsoleRPGGame.src.Utilitys.Gui
                 }
                 else if (selectedValue == loot.Count + 1)
                 {
-                    var isOk = true;
-                    
-                    foreach (var item in loot)
-                    {
-                        isOk = player.AddItem(item);
-                        
-                        if(!isOk) { break; }
-                    }
+                    var isOk = (loot.Count <= player.Inventory.GetFreeInventorySpace());
 
                     if (isOk)
                     {
+                        foreach (var item in loot)
+                        {
+                            player.AddItem(item);
+                        }
+
                         Console.WriteLine("Alle Items wurden deinem Inventar hinzugefügt!");
                         loot.Clear();
                         Console.ReadLine();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Inventarsplatz reicht nicht aus. Füge Items einzeln hinzu oder leere dein Inventar.");
                     }
                 }
                 else if (selectedValue == loot.Count + 2)
@@ -100,7 +102,7 @@ namespace ConsoleRPGGame.src.Utilitys.Gui
                 }
             }
         }
-        
+
         public static ConsoleColor GetRarityColor(Rarity rarity)
         {
             switch (rarity)

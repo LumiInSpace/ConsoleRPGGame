@@ -1,4 +1,4 @@
-﻿using ConsoleRPGGame.src.Main;
+﻿using ConsoleRPGGame.src.Main.Chests;
 using System;
 
 namespace ConsoleRPGGame.src.Utilitys
@@ -10,8 +10,6 @@ namespace ConsoleRPGGame.src.Utilitys
             Random random = new Random();
             int itemCount = random.Next(1, maxItemCount);
             List<Item> loot = new List<Item>();
-
-
 
             for (int i = 0; i <= itemCount; i++)
             {
@@ -29,7 +27,7 @@ namespace ConsoleRPGGame.src.Utilitys
             return loot;
         }
 
-        private static Rarity GetRandomRarity(Dictionary<Rarity, float> dropRates)
+        public static Rarity GetRandomRarity(Dictionary<Rarity, float> dropRates)
         {
             Random random = new Random();
             float total = dropRates.Values.Sum();

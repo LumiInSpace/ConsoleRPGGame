@@ -57,8 +57,11 @@ namespace ConsoleRPGGame.src.Main
 
             while (true)
             {
-                var newEvent = EventTrigger.TriggerEvent();
-                newEvent.StartEvent(items, player);
+                //var newEvent = EventTrigger.TriggerEvent();
+                var newEvent = new NormalTreasureEvent("bla", "Du findest ein abgelegendes Haus im Wald.", EventTyp.TreasureEvent, Rarity.Common,
+                    Biome.Forest, "Du betrittst das Haus und schaust dich um", "Du entscheidest dich weiterzugehen.", "Du findest eine Truhe.");
+                newEvent.Execute(player, items);
+                Console.Clear();
             }
         }
 

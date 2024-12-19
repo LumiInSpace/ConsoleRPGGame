@@ -41,13 +41,6 @@ public static class ItemDeserializer
             
         }
 
-        foreach (var item in items)
-        {
-            Thread.Sleep(100);
-            Console.WriteLine($"Items wurden geladen: {item.Name}");
-            Console.Clear();
-        }
-
         return items;
     }
 }

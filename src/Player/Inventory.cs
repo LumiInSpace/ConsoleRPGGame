@@ -9,7 +9,7 @@ namespace ConsoleRPGGame.src.Player
 
         public bool AddItem(Item item)
         {
-            if (PlayerInventory.Count >= InventorySlots)
+            if (PlayerInventory.Count < InventorySlots)
             {
                 PlayerInventory.Add(item);
                 Console.WriteLine($"{item.Name} eingesammelt.");
@@ -40,7 +40,9 @@ namespace ConsoleRPGGame.src.Player
             Console.WriteLine("Inventory:\n");
             foreach (Item item in PlayerInventory)
             {
+                Console.ForegroundColor = Gui.GetRarityColor(item.Rarity);
                 Console.WriteLine($"{item.Name} [{item.Rarity}] [{item.Category}]");
+                Console.ForegroundColor = ConsoleColor.Gray;
             }
         }
 
