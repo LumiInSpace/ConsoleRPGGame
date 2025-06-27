@@ -1,3 +1,3 @@
 # Beschreibung
 
-Konsolenprogramm was im Terminal spielbar ist
+RPG Game was im Terminal spielbar ist.
