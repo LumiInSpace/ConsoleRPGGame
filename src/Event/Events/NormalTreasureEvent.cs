@@ -2,7 +2,7 @@
 using System.Dynamic;
 using System.Xml.Serialization;
 
-namespace ConsoleRPGGame.src.Events
+namespace ConsoleRPGGame.src.Event.Events
 {
     public class NormalTreasureEvent : AbtractEventBase
     {
@@ -12,6 +12,7 @@ namespace ConsoleRPGGame.src.Events
         public string EntryText { get; set; }
         public string LeaveText1 { get; set; }
         public string ChestText { get; set; }
+        //public string TrapText { get; set; }
 
 
         public NormalTreasureEvent(string name, string description, EventTyp eventTyp, Rarity rarity, Biome biome, string entryText, string leaveText1, string chestText) : base(name, description, eventTyp)
@@ -108,8 +109,16 @@ namespace ConsoleRPGGame.src.Events
 
         private void GetTrap(Character player)
         {
-
+            //Console.WriteLine(TrapText);
+            
         }
+
+
+
+
+
+
+
 
         private Chest GetChest()
         {
@@ -123,7 +132,7 @@ namespace ConsoleRPGGame.src.Events
                                 });
 
 
-            return (chestRarity) switch
+            return chestRarity switch
             {
                 Rarity.Common => new CommonChest(),
                 Rarity.Uncommon => new UncommonChest(),

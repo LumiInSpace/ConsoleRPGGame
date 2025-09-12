@@ -1,4 +1,5 @@
 ﻿
+using ConsoleRPGGame.src.Event.Events;
 using ConsoleRPGGame.src.Events;
 using ConsoleRPGGame.src.Utilitys.Gui;
 

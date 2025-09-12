@@ -1,6 +1,6 @@
 ﻿namespace ConsoleRPGGame.src.Main
 {
-    public class Event : IEvent
+    public class Event : IChestEvent
     {
         public int Rarity { get; set; }
 

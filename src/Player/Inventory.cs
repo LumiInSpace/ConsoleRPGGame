@@ -5,11 +5,14 @@ namespace ConsoleRPGGame.src.Player
     public class Inventory
     {
         public List<Item> PlayerInventory { get; set; } = new List<Item>();
-        public int InventorySlots { get; set; } = 20;
+        public int MaxSlots { get; set; } = 20;
+        public int UsedSlots => PlayerInventory.Count;
+        public int FreeSlots => MaxSlots - UsedSlots;
+
 
         public bool AddItem(Item item)
         {
-            if (PlayerInventory.Count < InventorySlots)
+            if (PlayerInventory.Count < MaxSlots)
             {
                 PlayerInventory.Add(item);
                 Console.WriteLine($"{item.Name} eingesammelt.");
@@ -45,11 +48,5 @@ namespace ConsoleRPGGame.src.Player
                 Console.ForegroundColor = ConsoleColor.Gray;
             }
         }
-
-        public int GetFreeInventorySpace()
-        {
-            return InventorySlots - PlayerInventory.Count;
-        }
-
     }
 }

@@ -31,7 +31,5 @@ namespace ConsoleRPGGame.src.Main
 
             return items;
         }
-
-
     }
 }

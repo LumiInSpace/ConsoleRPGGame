@@ -9,7 +9,7 @@ namespace ConsoleRPGGame.src.Main
             Random random = new Random();
 
             return new CommonChestEvent();
-           
+
         }
             
     }
