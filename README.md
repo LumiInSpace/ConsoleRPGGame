@@ -1,3 +1,3 @@
-# Beschreibung
+# Description & Info
 
-RPG Game was im Terminal spielbar ist.
+This is a learning project. I'll soon be working on a new version in a separate repository. No further updates are planned.
